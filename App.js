@@ -4,10 +4,11 @@ import axios from 'axios';
 import MovieApi from './movieApi';
 
 
+
 const App = () => {
  
   return (
-    <div className="App" style={{ height: "1000vh" }}>
+    <div className="App">
       <MovieApi />
     </div>
   );
