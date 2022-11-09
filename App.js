@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ReactDOM } from 'react';
-import axios from 'axios';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import Movie from './components/Movie';
+import Header from './Header';
 import MovieApi from './movieApi';
-import styles from "./styles.css";
-
-
 
 const App = () => {
  
   return (
-    <div className="App">
-      <MovieApi />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+      <Header />
+      <Routes>
+        <Route exact path='/'>
+          <MovieApi />
+        </Route>
+      </Routes>
+      </div>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;

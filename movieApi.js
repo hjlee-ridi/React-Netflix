@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, component} from "react";
 import { ReactDOM } from "react";
 import Slider from "react-slick";
 import axios from "axios";
@@ -9,19 +9,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
+
+
 function MovieApi(props) {
 	const [movies, setMovies] = useState(null);
 	const [mainMovieImg, setMainMovieImg] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
-
 	const settings = {
 		dots: true,
 		infinite: true,
-		speed: 500,
-		slidesToShow: 6,
-		slidesToScroll: 3
-	  };
+		speed: 2500,
+		slidesToShow: 1,
+		slidesToScroll: 1
+	  };	
+	
 
 	useEffect(() => {
 		const fetchUsers = async () => {
@@ -48,8 +50,9 @@ function MovieApi(props) {
 	if (loading) return <div>로딩중..</div>;
 	if (error) return <div>에러가 발생했습니다</div>;
 	if (!movies) return null;
-	
+
 	return (
+		
 		<div>
 			<div>
 			<Slider {...settings}>
@@ -63,7 +66,6 @@ function MovieApi(props) {
 							}
 							key={banner.id}
 							title={banner.title}
-							text={banner.overview}
 						/>
 					);
 				})}
