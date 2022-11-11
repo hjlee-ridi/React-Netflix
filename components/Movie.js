@@ -1,15 +1,21 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import './Movie.css';
 
 
 function Movie(props) {
-    return(
+    return (
         <div>
-            <img src={props.image} alt={props.id} />
-            <h3>{props.title}</h3>
-            <span>{props.overview}</span>
+            
+        <div style={{marginBottom: '50px'}}>
+            <img src={props.image} alt={props.title}
+                style={{
+                    width: '200px',
+                    height: '300px',
+                    position: 'relative'
+                }} />
         </div>
-    ); 
+        </div>
+    );
 }
 
 export default Movie;
