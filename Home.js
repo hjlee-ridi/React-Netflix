@@ -4,8 +4,9 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Slider from "react-slick";
 import axios from "axios";
 import Movie from "./components/Movie";
-import { API_URL, API_key, IMAGE_BASE_URL } from "./components/config";
+import { API_URL, API_KEY, IMAGE_BASE_URL } from "./components/config";
 import Banner from "./components/Banner";
+import HomeDrama from "./HomeDrama";
 import "./Home.css";
 import "slick-carousel/slick/slick.css";
 
@@ -45,7 +46,7 @@ function Home(props) {
 				// loading 상태를 true 로 바꿉니다.
 				setLoading(true);
 				const response = await axios.get(
-					`${API_URL}/movie/popular?api_key=${API_key}&language=en-US`
+					`${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US`
 				);
 				setMovies(response.data);
 			} catch (e) {
@@ -87,7 +88,6 @@ function Home(props) {
 			
 			<div className="gripcard">
 			<h3 className="todayTop">Today Top 20</h3>
-			<button>More</button>
 			<Slider {...cardsettings}>
 				{movies.results.map((movie, index) => {
 					return (
@@ -105,6 +105,10 @@ function Home(props) {
 					);
 				})}		
 				</Slider>
+			</div>
+
+			<div>
+			
 			</div>
 
 		</div>
