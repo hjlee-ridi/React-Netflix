@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+h1 {
+    color: white;
+
+}
+
+.Morebtn {
+    width: 50px;
+    height: 60px;
+    color: white;
+}

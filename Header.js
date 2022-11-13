@@ -7,7 +7,7 @@ import "./Header.css";
 function Header() {    
     return(
         <Link to="/">
-        <img src={logo} alt="netflix logo" />
+        <img src={logo} alt="netflix" />
         </Link>
 
     )

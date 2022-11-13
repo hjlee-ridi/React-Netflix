@@ -1,17 +1,17 @@
 import React, { useState, useEffect, component } from "react";
 import { ReactDOM } from "react";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import axios from "axios";
 import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./components/config";
 import Drama from "./components/Drama";
-import "./Home.css";
 import "slick-carousel/slick/slick.css";
 
 
 function HomeDrama(props) {
     const [dramas, setDrama] = useState([]);
     const [loadMorePage, setLoadMorePage] = useState(0);
+    const navigate = useNavigate();
     const settings = {
         dots: true,
         infinite: true,
@@ -27,7 +27,7 @@ function HomeDrama(props) {
         dots: false,
         infinite: true,
         slidesToShow: 8,
-        slidesToScroll: 3
+        slidesToScroll: 8
     };
 
 
@@ -53,15 +53,16 @@ function HomeDrama(props) {
         fetchMovies(endpoint)
     }
 
-
-    console.log(dramas);
+    const navigateDramaMore = () => {
+        navigate("/DramaMore");
+    }
 
 
     return (
 
         <div className="drama">
             <h3 className="todayTop">Drama</h3>
-            <button onClick={loadMore}>More</button>
+            <button onClick={navigateDramaMore}>More</button>
             <Slider {...cardsettings}>
                 {dramas && dramas.map((drama, index) => {
                     return (
@@ -78,6 +79,7 @@ function HomeDrama(props) {
                     );
                 })}
             </Slider>
+
         </div>
 
     );
