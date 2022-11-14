@@ -77,6 +77,7 @@ function HomeTop(props) {
 										: null
 								}
 								key={banner.id}
+								id={banner.id}
 								title={banner.title}
 							/>
 						);
@@ -99,6 +100,7 @@ function HomeTop(props) {
 								: null
 							}
 							key={movie.id}
+							id={movie.id}
 						/>
 						</React.Fragment>
 					);

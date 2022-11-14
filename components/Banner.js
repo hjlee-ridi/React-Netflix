@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import  "./Banner.css";
 
 
@@ -7,6 +8,7 @@ import  "./Banner.css";
 function Banner(props) {
 	return (
 		<div style={{marginBottom: '100px'}}>
+		<Link to={`/Netflix/${props.id}`}>
 		<div 	
 			style={{
 				background: `linear-gradient(to bottom,rgba(0,0,0,0)
@@ -39,6 +41,7 @@ function Banner(props) {
 				</div>
 			</div>
 		</div>
+		</Link>
 		</div>
 	);
 }

@@ -6,6 +6,7 @@ import axios from "axios";
 import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./components/config";
 import Drama from "./components/Drama";
 import "slick-carousel/slick/slick.css";
+import "./HomeDrama.css";
 
 
 function HomeDrama(props) {
@@ -61,8 +62,10 @@ function HomeDrama(props) {
     return (
 
         <div className="drama">
-            <h3 className="todayTop">Drama</h3>
-            <button onClick={navigateDramaMore}>More</button>
+            <div className="container">
+                <h3 className="dramaHeader">Drama</h3>
+                <button className="Morebtn" onClick={navigateDramaMore}>More</button>
+            </div>
             <Slider {...cardsettings}>
                 {dramas && dramas.map((drama, index) => {
                     return (

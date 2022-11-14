@@ -31,24 +31,26 @@ function DramaMore() {
     }
     return(
         <div className="drama">
-        <h1 className="DramaMore">Drama</h1>
-        <div className="container">
-            {dramas && dramas.map((drama, index) => {
-                return (
-                    <React.Fragment key={index}>
-                        <Drama
-                            image={
-                                drama.poster_path
-                                    ? `${IMAGE_BASE_URL}w500/${drama.poster_path}`
-                                    : null
-                            }
-                            key={drama.id}
-                        />
-                    </React.Fragment>
-                );
-            })}
-        </div>
-        <button onClick={loadMore}>More</button>
+            <h1 className="DramaMore">Drama</h1>
+            <div className="drama_container">
+                    {dramas && dramas.map((drama, index) => {
+                        return (
+                            <React.Fragment key={index}>
+                                <Drama
+                                    image={
+                                        drama.poster_path
+                                            ? `${IMAGE_BASE_URL}w500/${drama.poster_path}`
+                                            : null
+                                    }
+                                    key={drama.id}
+                                />
+                            </React.Fragment>
+                        );
+                    })}
+            </div>
+            <div className="btn_container">
+                <button className="Morebtn" onClick={loadMore}>More</button>
+            </div>
     </div>
     )
 }
