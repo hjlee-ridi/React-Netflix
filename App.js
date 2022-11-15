@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import DramaMore from './DramaMore';
-import Detail from './Detail';
+import TopDetail from './TopDetail';
+import DramaDetail from './DramaDetail';
 
 
 const App = () => {
@@ -15,7 +16,8 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/DramaMore' element={<DramaMore />} />
-          <Route exact path='/Netflix/:movieId' element={<Detail />} />
+          <Route exact path='/Netflix/:movieId' element={<TopDetail />} />
+          <Route exact path='/Drama/:movieId' element={<DramaDetail />} />
         </Routes>
       </BrowserRouter>
     </div>

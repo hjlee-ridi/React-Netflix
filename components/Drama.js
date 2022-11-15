@@ -6,7 +6,7 @@ function Drama(props) {
     return (
         <div>
             <div style={{ marginBottom: '50px' }}>
-                <Link to={`/Netflix/${props.id}`}>
+                <Link to={`/Drama/${props.id}`}>
                     <img src={props.image} alt={props.title}
                         style={{
                             width: '200px',

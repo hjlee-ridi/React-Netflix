@@ -7,11 +7,13 @@ import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./comp
 import Drama from "./components/Drama";
 import "slick-carousel/slick/slick.css";
 import "./HomeDrama.css";
+import Loading from "./Loading";
 
 
 function HomeDrama(props) {
     const [dramas, setDrama] = useState([]);
     const [loadMorePage, setLoadMorePage] = useState(0);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const settings = {
         dots: true,
@@ -45,6 +47,7 @@ function HomeDrama(props) {
             .then(response => {
                 setDrama([...dramas, ...response.results]);
                 setLoadMorePage(response.page)
+                setLoading(false);
             });
     }
 
@@ -58,14 +61,18 @@ function HomeDrama(props) {
         navigate("/DramaMore");
     }
 
-
     return (
-
         <div className="drama">
-            <div className="container">
+            {loading ? (
+            <div>
+                <Loading />
+            </div>) : (
+            <div>
+                <div>
+                <div className="container">
                 <h3 className="dramaHeader">Drama</h3>
                 <button className="Morebtn" onClick={navigateDramaMore}>More</button>
-            </div>
+            </div> 
             <Slider {...cardsettings}>
                 {dramas && dramas.map((drama, index) => {
                     return (
@@ -82,9 +89,10 @@ function HomeDrama(props) {
                     );
                 })}
             </Slider>
-
+            </div>
+            </div>
+            )}
         </div>
-
     );
 }
 

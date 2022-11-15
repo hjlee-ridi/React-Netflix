@@ -8,6 +8,10 @@ import { API_URL, API_KEY, IMAGE_BASE_URL } from "./components/config";
 import Banner from "./components/Banner";
 import "./HomeTop.css";
 import "slick-carousel/slick/slick.css";
+import Loading from "./Loading";
+import { DotWave } from '@uiball/loaders'
+
+
 
 
 
@@ -57,16 +61,17 @@ function HomeTop(props) {
 		fetchUsers();
 	}, []);
 
-	if (loading) return <div>로딩중..</div>;
+	if (loading) return <div style={{color: 'white'}}><Loading />
+		</div>;
 	if (error) return <div>에러가 발생했습니다</div>;
 	if (!movies) return null;
 
 
 
 	return (
-		
 		<div>
-			<div className="Banner">
+				<div>
+					<div className="Banner">
 				<Slider {...settings}>
 					{movies.results.map((banner) => {
 						return (
@@ -89,10 +94,10 @@ function HomeTop(props) {
 			<div className="gripcard">
 			<h3 className="todayTop">Today Top 20</h3>
 			<Slider {...cardsettings}>
+				
 				{movies.results.map((movie, index) => {
 					return (
 						<React.Fragment key={index}>
-							
 						<Movie
 							image={
 								movie.poster_path
@@ -107,7 +112,7 @@ function HomeTop(props) {
 				})}		
 				</Slider>
 			</div>
-
+				</div>
 		</div>
 	);
 }

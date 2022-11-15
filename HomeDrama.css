@@ -4,16 +4,19 @@
 
 }
 
+
+
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    margin: 0px 30px
+    margin: 0px 30px;
 }
 
 .dramaHeader {
     width: 100px;
     color: white;
+    z-index: 3;
 }
 
 .Morebtn {
@@ -22,4 +25,5 @@
     height: 50px;
     color: white;
     top: 0px;
+    z-index: 3;
 }

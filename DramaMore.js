@@ -31,8 +31,9 @@ function DramaMore() {
     }
     return(
         <div className="drama">
-            <h1 className="DramaMore">Drama</h1>
+            
             <div className="drama_container">
+            <h1 className="DramaMore">Drama</h1>
                     {dramas && dramas.map((drama, index) => {
                         return (
                             <React.Fragment key={index}>
