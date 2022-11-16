@@ -21,6 +21,8 @@ function TopDetail() {
 		getMovies();
 	}, [])
 
+
+	console.log(movies);
 	return (
 		<div className="component">
 			<React.Fragment>

@@ -21,7 +21,6 @@ function DramaDetail() {
 	useEffect(()=> {
 		getMovies();
 	}, [])
-
     console.log(movies);
 	return (
 		<div className="component">

@@ -61,6 +61,7 @@ function HomeDrama(props) {
         navigate("/DramaMore");
     }
 
+console.log(dramas);
     return (
         <div className="drama">
             {loading ? (
@@ -84,6 +85,7 @@ function HomeDrama(props) {
                                         : null
                                 }
                                 key={drama.id}
+                                id={drama.id}
                             />
                         </React.Fragment>
                     );
