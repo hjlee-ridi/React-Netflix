@@ -1,17 +1,17 @@
 import React, { useState, useEffect, component } from "react";
-import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./components/config";
-import Drama from "./components/Drama";
+import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION } from "./components/config";
+import Action from "./components/Action";
 import axios from "axios";
-import "./DramaMore.css";
+import "./ActionMore.css";
 
 
-function DramaMore() {
+function ActionMore() {
 
-    const [dramas, setDrama] = useState([]);
+    const [actions, setAction] = useState([]);
     const [loadMorePage, setLoadMorePage] = useState(0);
 
     useEffect(() => {
-        const endpoint = `${API_URL}${DRAMA}&api_key=${API_KEY}&language=en-US`;
+        const endpoint = `${API_URL}${ACTION}&api_key=${API_KEY}&language=en-US`;
         fetchMovies(endpoint)
     }, [])
 
@@ -19,32 +19,32 @@ function DramaMore() {
         fetch(endpoint)
             .then((response) => response.json())
             .then(response => {
-                setDrama([...dramas, ...response.results]);
+                setAction([...actions, ...response.results]);
                 setLoadMorePage(response.page)
             });
     }
 
     const loadMore = () => {
 
-        const endpoint = `${API_URL}${DRAMA}&api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
+        const endpoint = `${API_URL}${ACTION}&api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
         fetchMovies(endpoint)
     }
     return(
-        <div className="drama">
+        <div className="action">
             
-            <div className="drama_container">
-            <h1 className="DramaMore">Drama</h1>
-                    {dramas && dramas.map((drama, index) => {
+            <div className="action_container">
+            <h1 className="ActionMore">Action</h1>
+                    {actions && actions.map((action, index) => {
                         return (
                             <React.Fragment key={index}>
-                                <Drama
+                                <Action
                                     image={
-                                        drama.poster_path
-                                            ? `${IMAGE_BASE_URL}w500/${drama.poster_path}`
+                                        action.poster_path
+                                            ? `${IMAGE_BASE_URL}w500/${action.poster_path}`
                                             : null
                                     }
-                                    key={drama.id}
-                                    id={drama.id}
+                                    key={action.id}
+                                    id={action.id}
                                 />
                             </React.Fragment>
                         );
@@ -57,4 +57,4 @@ function DramaMore() {
     )
 }
 
-export default DramaMore;
+export default ActionMore;

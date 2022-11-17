@@ -2,16 +2,16 @@ import React, { useState, useEffect, component } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./components/config";
 import Drama from "./components/Drama";
 import axios from "axios";
-import "./DramaMore.css";
+import "./FantasyMore.css";
 
 
-function DramaMore() {
+function FantasyMore() {
 
-    const [dramas, setDrama] = useState([]);
+    const [Fantasys, setFantasy] = useState([]);
     const [loadMorePage, setLoadMorePage] = useState(0);
 
     useEffect(() => {
-        const endpoint = `${API_URL}${DRAMA}&api_key=${API_KEY}&language=en-US`;
+        const endpoint = `${API_URL}${FANTASY}&api_key=${API_KEY}&language=en-US`;
         fetchMovies(endpoint)
     }, [])
 
@@ -19,32 +19,32 @@ function DramaMore() {
         fetch(endpoint)
             .then((response) => response.json())
             .then(response => {
-                setDrama([...dramas, ...response.results]);
+                setFantasy([...Fantasys, ...response.results]);
                 setLoadMorePage(response.page)
             });
     }
 
     const loadMore = () => {
 
-        const endpoint = `${API_URL}${DRAMA}&api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
+        const endpoint = `${API_URL}${FANTASY}&api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
         fetchMovies(endpoint)
     }
     return(
-        <div className="drama">
+        <div className="fantasy">
             
-            <div className="drama_container">
-            <h1 className="DramaMore">Drama</h1>
-                    {dramas && dramas.map((drama, index) => {
+            <div className="fantasy_container">
+            <h1 className="FantasyMore">Fantasy</h1>
+                    {Fantasys && Fantasys.map((fantasy, index) => {
                         return (
                             <React.Fragment key={index}>
                                 <Drama
                                     image={
-                                        drama.poster_path
-                                            ? `${IMAGE_BASE_URL}w500/${drama.poster_path}`
+                                        fantasy.poster_path
+                                            ? `${IMAGE_BASE_URL}w500/${fantasy.poster_path}`
                                             : null
                                     }
-                                    key={drama.id}
-                                    id={drama.id}
+                                    key={fantasy.id}
+                                    id={fantasy.id}
                                 />
                             </React.Fragment>
                         );
@@ -57,4 +57,4 @@ function DramaMore() {
     )
 }
 
-export default DramaMore;
+export default FantasyMore;

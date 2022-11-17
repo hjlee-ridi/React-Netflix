@@ -1,19 +1,19 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useParams } from "react-router-dom";
-import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA} from "./components/config";
+import { API_URL, API_KEY, IMAGE_BASE_URL, FANTASY} from "./components/config";
 import MovieInfo from "./MovieInfo";
-import Drama from "./components/Drama";
+import Fantasy from './components/Fantasy';
 import './TopDetail.css';
 
 
-function DramaDetail() {
+function FantasyDetail() {
 	const { movieId } = useParams();
 	const [movies, setMovie] = useState([]);
 
 	const getMovies = async() => {
 		const json = await (
 			await fetch(
-				`${API_URL}/movie/${movieId}?${DRAMA}&api_key=${API_KEY}&language=en-US`
+				`${API_URL}/movie/${movieId}?${FANTASY}&api_key=${API_KEY}&language=en-US`
 			)
 		).json();
 		setMovie(json)
@@ -26,7 +26,7 @@ function DramaDetail() {
 	return (
 		<div className="component">
 			<React.Fragment>
-			<Drama
+			<Fantasy
 			 image={
 				movies.poster_path
 					? `${IMAGE_BASE_URL}original/${movies.poster_path}`
@@ -40,4 +40,4 @@ function DramaDetail() {
 	);
 }
 
-export default DramaDetail;
+export default FantasyDetail;
