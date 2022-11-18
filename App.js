@@ -9,6 +9,7 @@ import TopDetail from './TopDetail';
 import DramaDetail from './DramaDetail';
 import ActionDetail from './ActionDetail';
 import FantasyDetail from './FantasyDetail';
+import Footer from './components/Footer';
 
 
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route exact path='/Action/:movieId' element={<ActionDetail />} />
           <Route exact path='/Fantasy/:movieId' element={<FantasyDetail />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
