@@ -1,7 +1,7 @@
 import React, { useState, useEffect, component } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./components/config";
 import Drama from "./components/Drama";
-import axios from "axios";
+
 import "./FantasyMore.css";
 
 
