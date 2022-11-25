@@ -21,12 +21,12 @@ function DramaDetail() {
 	};
 
 	const getDramas = async() => {
-		const jsons = await (
+		const json = await (
 			await fetch(
 				`${API_URL}${DRAMA}&api_key=${API_KEY}&language=en-US`
 			)
 		).json();
-		setDramas(jsons)
+		setDramas(json.results)
 	};
 
 
@@ -40,7 +40,8 @@ function DramaDetail() {
 	
     console.log(dramas);
 	return (
-		<div className="component">
+		<div>
+			<div  className="component">
 			<React.Fragment>
 			<Drama
 			 image={
@@ -51,9 +52,11 @@ function DramaDetail() {
 			<MovieInfo
 				movie={movies}
 			/>
-
 			</React.Fragment>
-			<h3 style={{color: 'white'}}>비슷한 영화</h3>
+			</div>
+
+			<h2>비슷한 영화</h2>
+			<div  className="components">
 			{dramas && dramas.map((drama, index) => {
                     return (
                         <React.Fragment key={index}>
@@ -69,7 +72,7 @@ function DramaDetail() {
                         </React.Fragment>
                     );
                 })}
-		
+		</div>
 		</div>
 	);
 }

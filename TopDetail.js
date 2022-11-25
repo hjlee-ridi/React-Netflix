@@ -24,7 +24,7 @@ function TopDetail() {
 
 	console.log(movies);
 	return (
-		<div className="component">
+		<div className="container">
 			<React.Fragment>
 			<Movie
 			 image={
