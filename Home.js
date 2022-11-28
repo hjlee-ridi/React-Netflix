@@ -1,16 +1,9 @@
 import React from "react";
-import HomeTop from "./HomeTop";
-import HomeDrama from "./HomeDrama";
-import HomeAction from "./HomeAction";
-import HomeFantasy from "./HomeFantasy";
-
+import HomeTop from "./Top/HomeTop";
 function Home() {
     return(
         <div>
-            <HomeTop />
-            <HomeDrama />
-            <HomeAction />
-            <HomeFantasy />
+           <HomeTop />
         </div>
     )
 }
