@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom"
-import  "./Banner.css";
+
 
 
 
@@ -16,7 +15,7 @@ function Banner(props) {
 			41%,rgba(0,0,0,0.65)
 			100%),
 			url(${props.image}), #1c1c1c`,
-				height: '90vh',
+				height: '100vh',
 				backgroundSize: '100%,cover',
 				width: '100%',
 				position: 'relative'
