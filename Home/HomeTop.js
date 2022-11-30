@@ -20,10 +20,8 @@ function HomeTop(props) {
 	useEffect(() => {
 		const fetchUsers = async () => {
 			try {
-				// 요청이 시작 할 때에는 error 와 movies 를 초기화하고
 				setError(null);
 				setMovies(null);
-				// loading 상태를 true 로 바꿉니다.
 				setLoading(true);
 				const response = await axios.get(
 					`${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US`
@@ -46,11 +44,9 @@ function HomeTop(props) {
 
 
 	return (
-				<div>
 				<div className="gripcard">
 					<h3 className="todayTop">Today Top 20</h3>
 					<Slider {...cardsettings}>
-
 						{movies.results.map((movie, index) => {
 							return (
 								<React.Fragment key={index}>
@@ -67,7 +63,6 @@ function HomeTop(props) {
 							);
 						})}
 					</Slider>
-				</div>
 				</div>
 	);
 }

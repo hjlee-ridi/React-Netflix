@@ -49,7 +49,7 @@ function HomeBanner(props) {
 	return (
 		<Container fluid>
 			<Row>
-				<Col>
+				<Col className="banner">
 				<Carousel activeIndex={index} onSelect={handleSelect}>
 						{movies.results.map((banner) => {
 							return (
