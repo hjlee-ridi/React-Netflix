@@ -1,16 +1,15 @@
 import React, { useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
-import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION } from "../components/config";
-import Action from "../components/Action";
+import { API_URL, API_KEY, IMAGE_BASE_URL} from "../components/config";
 import "slick-carousel/slick/slick.css";
 import "./Home.css";
 import Loading from "../components/Loading";
+import Upcoming from "../components/Upcoming";
 
 
 function HomeUpcomingMovies(props) {
-    const [Actions, setAction] = useState([]);
-    const [loadMorePage, setLoadMorePage] = useState(0);
+    const [UpcomingMovies, setUpcoming] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
@@ -22,8 +21,6 @@ function HomeUpcomingMovies(props) {
     };
 
 
-
-
     useEffect(() => {
         const endpoint = `${API_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US`;
         fetchMovies(endpoint)
@@ -33,56 +30,48 @@ function HomeUpcomingMovies(props) {
         fetch(endpoint)
             .then((response) => response.json())
             .then(response => {
-                setAction([...Actions, ...response.results]);
-                setLoadMorePage(response.page)
+                setUpcoming([...UpcomingMovies, ...response.results]);
+                
                 setLoading(false);
             });
     }
 
-    const loadMore = () => {
-
-        const endpoint = `${API_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
-        fetchMovies(endpoint)
-    }
-
     
 
-    const navigateDramaMore = () => {
-        navigate("/ActionMore");
+    const navigateUpcomingMore = () => {
+        navigate("/UpcomingMore");
     }
 
 
-console.log(Actions);
+console.log(Upcoming);
     return (
-        <div className="action">
+        <div className="Upcoming">
             {loading ? (
             <div>
                 <Loading />
             </div>) : (
             <div>
-                <div>
                 <div className="container">
                 <h3 className="Header">Upcoming Movies</h3>
-                <button className="Morebtn" onClick={navigateDramaMore}>More</button>
+                <button className="Morebtn" onClick={navigateUpcomingMore}>More</button>
             </div> 
-            <Slider {...cardsettings}>
-                {Actions && Actions.map((action, index) => {
+            <Slider {...cardsettings} className="slider">
+                {UpcomingMovies && UpcomingMovies.map((upcoming, index) => {
                     return (
                         <React.Fragment key={index}>
-                            <Action
+                            <Upcoming
                                 image={
-                                    action.poster_path
-                                        ? `${IMAGE_BASE_URL}w500/${action.poster_path}`
+                                    upcoming.poster_path
+                                        ? `${IMAGE_BASE_URL}w500/${upcoming.poster_path}`
                                         : null
                                 }
-                                key={action.id}
-                                id={action.id}
+                                key={upcoming.id}
+                                id={upcoming.id}
                             />
                         </React.Fragment>
                     );
                 })}
             </Slider>
-            </div>
             </div>
             )}
         </div>

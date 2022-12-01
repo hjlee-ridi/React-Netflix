@@ -1,8 +1,7 @@
-import React, { useState, useEffect, component } from "react";
-import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./components/config";
-import Drama from "./components/Drama";
-
-import "./FantasyMore.css";
+import React, { useState, useEffect} from "react";
+import { API_URL, API_KEY, IMAGE_BASE_URL, FANTASY } from "../components/config";
+import Fantasy from "../components/Fantasy";
+import "./More.css";
 
 
 function FantasyMore() {
@@ -31,13 +30,12 @@ function FantasyMore() {
     }
     return(
         <div className="fantasy">
-            
-            <div className="fantasy_container">
-            <h1 className="FantasyMore">Fantasy</h1>
+           <div className="containers">
+            <h1>Fantasy</h1>
                     {Fantasys && Fantasys.map((fantasy, index) => {
                         return (
                             <React.Fragment key={index}>
-                                <Drama
+                                <Fantasy
                                     image={
                                         fantasy.poster_path
                                             ? `${IMAGE_BASE_URL}w500/${fantasy.poster_path}`
@@ -51,7 +49,7 @@ function FantasyMore() {
                     })}
             </div>
             <div className="btn_container">
-                <button className="Morebtn" onClick={loadMore}>More</button>
+                <button className="Morebutton" onClick={loadMore}>More</button>
             </div>
     </div>
     )

@@ -4,6 +4,8 @@ import axios from "axios";
 import Movie from "../components/Movie";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import Loading from "../components/Loading";
+import "./Home.css";
+
 
 function HomeTop(props) {
 	const [movies, setMovies] = useState(null);
@@ -36,17 +38,19 @@ function HomeTop(props) {
 		fetchUsers();
 	}, []);
 
-	if (loading) return <div style={{ color: 'white' }}><Loading />
-	</div>;
+	if (loading) return <div><Loading /></div>;
 	if (error) return <div>에러가 발생했습니다</div>;
 	if (!movies) return null;
 
 
 
 	return (
-				<div className="gripcard">
-					<h3 className="todayTop">Today Top 20</h3>
-					<Slider {...cardsettings}>
+		<div className="Top">
+				<div className="container">
+					<h3 className="Header">Today Top 20</h3>
+				</div>
+				<div>
+					<Slider {...cardsettings} className="slider">
 						{movies.results.map((movie, index) => {
 							return (
 								<React.Fragment key={index}>
@@ -63,6 +67,7 @@ function HomeTop(props) {
 							);
 						})}
 					</Slider>
+				</div>
 				</div>
 	);
 }

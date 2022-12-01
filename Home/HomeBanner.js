@@ -40,8 +40,7 @@ function HomeBanner(props) {
 		fetchUsers();
 	}, []);
 
-	if (loading) return <div style={{ color: 'white' }}><Loading />
-	</div>;
+	if (loading) return <div><Loading /></div>;
 	if (error) return <div>에러가 발생했습니다</div>;
 	if (!movies) return null;
 
@@ -49,7 +48,7 @@ function HomeBanner(props) {
 	return (
 		<Container fluid>
 			<Row>
-				<Col className="banner">
+				<Col>
 				<Carousel activeIndex={index} onSelect={handleSelect}>
 						{movies.results.map((banner) => {
 							return (

@@ -62,7 +62,7 @@ console.log(dramas);
                 <h3 className="Header">Drama</h3>
                 <button className="Morebtn" onClick={navigateDramaMore}>More</button>
             </div> 
-            <Slider {...cardsettings}>
+            <Slider {...cardsettings}className="slider">
                 {dramas && dramas.map((drama, index) => {
                     return (
                         <React.Fragment key={index}>

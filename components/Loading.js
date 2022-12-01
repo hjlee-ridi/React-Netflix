@@ -1,15 +1,11 @@
 import React from 'react'
-import { DotWave } from '@uiball/loaders'
+import logo from '../Img/loading.png';
 import './Loading.css'
 
 function Loading() {
     return (
         <div className='Loading'>
-            <DotWave
-                size={150}
-                speed={1}
-                color="white"
-            />
+            <img className='Loading_img' src={logo} alt="Loading" />
         </div>
     )
 }

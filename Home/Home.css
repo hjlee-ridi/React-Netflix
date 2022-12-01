@@ -1,27 +1,40 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-
+    margin: 0px;
 }
+
 
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    margin: 0px 30px;
+    margin: 0 50px;
+    max-width: 95%;
 }
 
 .Header {
-    width: 100px;
+    width: 500px;
     color: white;
     z-index: 3;
 }
 
 .Morebtn {
-    font-size: 30px;
+    font-size: 25px;
     width: 250px;
     height: 50px;
+    background-color: black;
     color: white;
-    top: 0px;
-    z-index: 3;
+}
+
+.Morebtn:hover {
+    color: red;
+    border-style: outset;
+    border-color: red;
+}
+
+.Top{
+    margin-top: 150px;
+}
+
+.slider{
+    margin-bottom: 80px;
 }

@@ -1,8 +1,7 @@
-import React, { useState, useEffect, component } from "react";
-import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA, ACTION, FANTASY } from "./components/config";
-import Drama from "./components/Drama";
-import axios from "axios";
-import "./DramaMore.css";
+import React, { useState, useEffect} from "react";
+import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA } from "../components/config";
+import Drama from "../components/Drama";
+import "./More.css";
 
 
 function DramaMore() {
@@ -31,9 +30,8 @@ function DramaMore() {
     }
     return(
         <div className="drama">
-            
-            <div className="drama_container">
-            <h1 className="DramaMore">Drama</h1>
+         <div className="containers">
+            <h1>Drama</h1>
                     {dramas && dramas.map((drama, index) => {
                         return (
                             <React.Fragment key={index}>
@@ -51,7 +49,7 @@ function DramaMore() {
                     })}
             </div>
             <div className="btn_container">
-                <button className="Morebtn" onClick={loadMore}>More</button>
+                <button className="Morebutton" onClick={loadMore}>More</button>
             </div>
     </div>
     )

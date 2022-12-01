@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 function Banner(props) {
 	return (
-		<div style={{marginBottom: '100px'}}>
+		<div style={{marginBottom: '-50px'}}>
 		<Link to={`/Netflix/${props.id}`}>
 		<div 	
 			style={{
@@ -18,7 +18,8 @@ function Banner(props) {
 				height: '100vh',
 				backgroundSize: '100%,cover',
 				width: '100%',
-				position: 'relative'
+				position: 'relative',
+				
 
 			}}
 		>
@@ -28,7 +29,7 @@ function Banner(props) {
 					style={{
 						position: "absolute",
 						maxWidth: "1000px",
-						margin: "150px",
+						margin: "250px",
 						bottom: "20px",
 						marginLeft: '150px',
 						fontSize: '32px'

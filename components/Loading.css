@@ -1,66 +1,38 @@
 
 
-.Loading {  
-    position: fixed;
-    top: 45%;
-    left: 45%;
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
+
+/* .Loading {  
+  position: fixed;
+  top: 45%;
+  left: 45%;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+} */
+
+
+.Loading{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+  
 }
 
+.Loading_img{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  animation: Loading linear 10s infinite;
+}
 
-
-.dot-wave {
-    --uib-size: 47px;
-    --uib-speed: 1s;
-    --uib-color: white;
-  
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    width: var(--uib-size);
-    height: calc(var(--uib-size) * 0.17);
-    padding-top: calc(var(--uib-size) * 0.34);
-  }
-  
-  .dot-wave__dot {
-    flex-shrink: 0;
-    width: calc(var(--uib-size) * 0.17);
-    height: calc(var(--uib-size) * 0.17);
-    border-radius: 50%;
-    background-color: var(--uib-color);
-    will-change: transform;
-  }
-  
-  .dot-wave__dot:nth-child(1) {
-    animation: jump var(--uib-speed) ease-in-out
-      calc(var(--uib-speed) * -0.45) infinite;
-  }
-  
-  .dot-wave__dot:nth-child(2) {
-    animation: jump var(--uib-speed) ease-in-out
-      calc(var(--uib-speed) * -0.3) infinite;
-  }
-  
-  .dot-wave__dot:nth-child(3) {
-    animation: jump var(--uib-speed) ease-in-out
-      calc(var(--uib-speed) * -0.15) infinite;
-  }
-  
-  .dot-wave__dot:nth-child(4) {
-    animation: jump var(--uib-speed) ease-in-out infinite;
-  }
-  
-  @keyframes jump {
-    0%,
+  @keyframes Loading {
+    0% {
+      transform: rotate(0deg);
+    }
     100% {
-      transform: translateY(0px);
+      transform: rotate(360deg);
     }
-  
-    50% {
-      transform: translateY(-200%);
-    }
+
   }

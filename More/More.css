@@ -3,7 +3,7 @@
     margin: 0;
 }
 
-.action_container {
+.containers {
     width: 93%;
 	display: flex;
     flex-wrap: wrap;
@@ -30,12 +30,17 @@ h1 {
     margin-bottom: 150px;
 }
 
-.Morebtn {
-    width: 50px;
+.Morebutton {
+    width: 150px;
     height: 60px;
     color: white;
+    background-color: black;
     position: relative;
     font-size: 20px;
-    
 }
 
+.Morebutton:hover {
+    color: red;
+    border-style: outset;
+    border-color: red;
+}

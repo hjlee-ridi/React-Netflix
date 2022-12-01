@@ -10,7 +10,6 @@ import Loading from "../components/Loading";
 
 function HomeAction(props) {
     const [Actions, setAction] = useState([]);
-    const [loadMorePage, setLoadMorePage] = useState(0);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
@@ -34,18 +33,11 @@ function HomeAction(props) {
             .then((response) => response.json())
             .then(response => {
                 setAction([...Actions, ...response.results]);
-                setLoadMorePage(response.page)
                 setLoading(false);
             });
     }
 
-    const loadMore = () => {
-
-        const endpoint = `${API_URL}${ACTION}&api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
-        fetchMovies(endpoint)
-    }
-
-    const navigateDramaMore = () => {
+    const navigateActionMore = () => {
         navigate("/ActionMore");
     }
 
@@ -60,9 +52,9 @@ console.log(Actions);
                 <div>
                 <div className="container">
                 <h3 className="Header">Action</h3>
-                <button className="Morebtn" onClick={navigateDramaMore}>More</button>
+                <button className="Morebtn" onClick={navigateActionMore}>More</button>
             </div> 
-            <Slider {...cardsettings}>
+            <Slider {...cardsettings} className="slider">
                 {Actions && Actions.map((action, index) => {
                     return (
                         <React.Fragment key={index}>

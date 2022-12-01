@@ -1,8 +1,7 @@
-import React, { useState, useEffect, component } from "react";
-import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION } from "./components/config";
-import Action from "./components/Action";
-import axios from "axios";
-import "./ActionMore.css";
+import React, { useState, useEffect} from "react";
+import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION } from "../components/config";
+import Action from "../components/Action";
+import "./More.css";
 
 
 function ActionMore() {
@@ -31,9 +30,8 @@ function ActionMore() {
     }
     return(
         <div className="action">
-            
-            <div className="action_container">
-            <h1 className="ActionMore">Action</h1>
+            <div className="containers">
+            <h1>Action</h1>
                     {actions && actions.map((action, index) => {
                         return (
                             <React.Fragment key={index}>
@@ -51,7 +49,7 @@ function ActionMore() {
                     })}
             </div>
             <div className="btn_container">
-                <button className="Morebtn" onClick={loadMore}>More</button>
+                <button className="Morebutton" onClick={loadMore}>More</button>
             </div>
     </div>
     )
