@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.components_Detail {
+    margin-bottom: 150px;
+}
+
+.poster_Detail{
+    width: 400px;
+    height: 600px;
+    position: relative;
+}
+
+.DetailMore{
+    
+}

@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+.poster{
+    display: flex;
+    align-content: center;
+}
+
+.MovieInfo{
+    width: 1000px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 350px;
+}
+
+.starImg {
+    width: 20px;
+    height: 20px;
+}
+
+.title {
+    color: white;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.Info {
+    color: white;
+    margin-bottom: 30px;
+}
+
+.overview {
+    color: white;
+}

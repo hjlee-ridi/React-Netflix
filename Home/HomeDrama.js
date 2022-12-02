@@ -39,11 +39,6 @@ function HomeDrama(props) {
             });
     }
 
-    const loadMore = () => {
-
-        const endpoint = `${API_URL}${DRAMA}&api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
-        fetchMovies(endpoint)
-    }
 
     const navigateDramaMore = () => {
         navigate("/DramaMore");
