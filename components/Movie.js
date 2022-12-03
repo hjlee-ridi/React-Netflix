@@ -8,7 +8,7 @@ function Movie(props) {
         <div>
             <div style={{ marginBottom: '50px' }}>
                 <Link to={`/Netflix/${props.id}`}>
-                    <img src={props.image} alt={props.title} className='poster'  />
+                    <img src={props.image} alt={props.title} className='gridcard'  />
                 </Link>
             </div>
         </div>

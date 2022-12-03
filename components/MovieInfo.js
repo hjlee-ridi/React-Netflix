@@ -8,7 +8,7 @@ function MovieInfo(props) {
   return (
     <div className='MovieInfo'>
         <h3 className='title'>{movie.original_title}</h3>
-        <p className='Info'>{movie.release_date}▪{movie.runtime}▪⭐{movie.vote_average}</p>
+        <p className='Info'>{movie.release_date} ▪ {movie.runtime} ▪ ⭐{movie.vote_average}</p>
         <p className='overview'>{movie.overview}</p>  
      </div>
 

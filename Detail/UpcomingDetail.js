@@ -8,7 +8,6 @@ import './Detail.css';
 function UpcomingDetail() {
 	const { movieId } = useParams();
 	const [movies, setMovie] = useState([]);
-    const [upcomingMovies, setUpcoming] = useState([]);
     const navigate = useNavigate();
 
 	const getMovies = async() => {
@@ -21,23 +20,10 @@ function UpcomingDetail() {
 	};
 
 
-	const getDramas = async() => {
-		const json = await (
-			await fetch(
-				`${API_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US`
-			)
-		).json();
-		setUpcoming(json.results)
-	};
-
-
 	useEffect(()=> {
 		getMovies();
 	}, [])
 
-	useEffect(()=> {
-		getDramas();
-	}, [])
 
     const navigateUpcomingMore = () => {
         navigate("/UpcomingMore");
@@ -59,7 +45,7 @@ function UpcomingDetail() {
 			</React.Fragment>
             </div>
             
-            <div className="Detailbtn">
+            <div className="DetailBtn">
             <button className="Detailbutton" onClick={navigateUpcomingMore}>비슷한 영화</button>
             </div>
             

@@ -50,9 +50,9 @@ function HomeBanner(props) {
 			<Row>
 				<Col>
 				<Carousel activeIndex={index} onSelect={handleSelect}>
-						{movies.results.map((banner) => {
+						{movies.results.map((banner, index) => {
 							return (
-								<Carousel.Item>
+								<Carousel.Item key={index}>
 									<Banner
 									image={
 										banner.backdrop_path

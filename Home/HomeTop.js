@@ -12,11 +12,58 @@ function HomeTop(props) {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const cardsettings = {
-		dots: false,
-		infinite: true,
-		slidesToShow: 8,
-		slidesToScroll: 8
-	};
+        dots: false,
+        infinite: true,
+        slidesToShow: 8,
+        slidesToScroll: 8,
+        responsive: [
+            {
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    infinite: true,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 7,
+                    slidesToScroll: 7,
+                    infinite: true,
+                    dots: false
+                }
+            }
+        ]
+    };
 
 
 	useEffect(() => {

@@ -1,14 +1,16 @@
 import React, { useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
+import { useParams , useNavigate } from "react-router-dom";
 import { API_URL, API_KEY, IMAGE_BASE_URL, FANTASY} from "../components/config";
 import MovieInfo from '../components/MovieInfo';
 import Fantasy from '../components/Fantasy';
+import FantasyMore from '../More/FantasyMore';
 import './Detail.css';
 
 
 function FantasyDetail() {
 	const { movieId } = useParams();
 	const [movies, setMovie] = useState([]);
+	const navigate = useNavigate();
 
 	const getMovies = async() => {
 		const json = await (
@@ -22,7 +24,12 @@ function FantasyDetail() {
 		getMovies();
 	}, [])
 	
+    const navigateFantasyMore = () => {
+        navigate("/FantasyMore");
+    }
+
 	return (
+		<div>
 		<div className="Detail">
 			<React.Fragment>
 			<Fantasy
@@ -35,6 +42,12 @@ function FantasyDetail() {
 				movie={movies}
 			/>
 			</React.Fragment>
+			</div>
+
+			<div className="DetailBtn">
+            <button className="Detailbutton" onClick={navigateFantasyMore}>비슷한 영화</button>
+            </div>
+
 		</div>
 	);
 }

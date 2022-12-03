@@ -8,7 +8,7 @@ import Loading from "../components/Loading";
 import Upcoming from "../components/Upcoming";
 
 
-function HomeUpcomingMovies(props) {
+function HomeUpcomingMovies() {
     const [UpcomingMovies, setUpcoming] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
@@ -17,7 +17,54 @@ function HomeUpcomingMovies(props) {
         dots: false,
         infinite: true,
         slidesToShow: 8,
-        slidesToScroll: 8
+        slidesToScroll: 8,
+        responsive: [
+            {
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    infinite: true,
+                    dots: false,
+                }
+            },
+            {
+                breakpoint: 1440,
+                settings: {
+                    slidesToShow: 7,
+                    slidesToScroll: 7,
+                    infinite: true,
+                    dots: false
+                }
+            }
+        ]
     };
 
 
@@ -43,7 +90,6 @@ function HomeUpcomingMovies(props) {
     }
 
 
-console.log(Upcoming);
     return (
         <div className="Upcoming">
             {loading ? (

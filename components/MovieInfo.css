@@ -10,13 +10,9 @@
 }
 
 .MovieInfo{
-    width: 1000px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 350px;
+    width: 50%;
+    height: 53vh;
+    padding-left: 300px;
 }
 
 .starImg {

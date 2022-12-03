@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom"
 
-
-
-
-
 function Banner(props) {
 	return (
 		<div style={{marginBottom: '-50px'}}>
@@ -29,7 +25,7 @@ function Banner(props) {
 					style={{
 						position: "absolute",
 						maxWidth: "1000px",
-						margin: "250px",
+						margin: "200px",
 						bottom: "20px",
 						marginLeft: '150px',
 						fontSize: '32px'
@@ -37,6 +33,7 @@ function Banner(props) {
 				>
 
 					<h2  style={{ color: "white" }}> {props.title}</h2>
+
 					
 				</div>
 			</div>

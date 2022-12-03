@@ -1,14 +1,16 @@
 import React, { useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION} from "../components/config";
 import MovieInfo from '../components/MovieInfo';
 import Action from "../components/Action";
+import ActionMore from '../More/ActionMore';
 import './Detail.css';
 
 
 function ActionDetail() {
 	const { movieId } = useParams();
 	const [movies, setMovie] = useState([]);
+	const navigate = useNavigate();
 
 	const getMovies = async() => {
 		const json = await (
@@ -21,9 +23,14 @@ function ActionDetail() {
 	useEffect(()=> {
 		getMovies();
 	}, [])
+
+	const navigateActionMore = () => {
+        navigate("/ActionMore");
+    }
 	
 
 	return (
+		<div>
 		<div className="Detail">
 			<React.Fragment>
 			<Action
@@ -36,6 +43,11 @@ function ActionDetail() {
 				movie={movies}
 			/>
 			</React.Fragment>
+			</div>
+			<div className="DetailBtn">
+            <button className="Detailbutton" onClick={navigateActionMore}>비슷한 영화</button>
+            </div>
+
 		</div>
 	);
 }

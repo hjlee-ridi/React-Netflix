@@ -3,28 +3,6 @@
     margin: 0px;
 }
 
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 50px;
-    max-width: 95%;
-}
-
-.Header {
-    width: 500px;
-    color: white;
-    z-index: 3;
-}
-
-.Morebtn {
-    font-size: 25px;
-    width: 250px;
-    height: 50px;
-    background-color: black;
-    color: white;
-}
-
 .Morebtn:hover {
     color: red;
     border-style: outset;
@@ -37,4 +15,78 @@
 
 .slider{
     margin-bottom: 80px;
+}
+
+@media screen and (min-width: 1200px){
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 50px;
+        max-width: 95%;
+    }
+
+    .Header {
+        width: 500px;
+        color: white;
+        z-index: 3;
+        font-size: 30px;
+    }
+    
+    .Morebtn {
+        font-size: 25px;
+        width: 150px;
+        height: 50px;
+        background-color: black;
+        color: white;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width:1199px)  {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 95%;
+    }
+
+    .Header {
+        width: 300px;
+        font-size: 24px;
+        color: white;
+        z-index: 3;
+    }
+    
+    .Morebtn {
+        font-size: 21px;
+        width: 100px;
+        height: 50px;
+
+        background-color: black;
+        color: white;
+    }
+}
+
+
+@media screen and (min-width: 480px) and (max-width:767px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 95%;
+    }
+
+    .Header {
+        width: 300px;
+        font-size: 18px;
+        color: white;
+        z-index: 3;
+    }
+    
+    .Morebtn {
+        font-size: 15px;
+        width: 70px;
+        height: 50px;
+        background-color: black;
+        color: white;
+    }
 }
