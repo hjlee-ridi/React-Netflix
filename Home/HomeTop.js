@@ -11,7 +11,7 @@ function HomeTop(props) {
 	const [movies, setMovies] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
-	const cardsettings = {
+    const cardsettings = {
         dots: false,
         infinite: true,
         slidesToShow: 8,
@@ -20,8 +20,8 @@ function HomeTop(props) {
             {
                 breakpoint: 320,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                     infinite: true,
                     dots: false
                 }
@@ -29,35 +29,35 @@ function HomeTop(props) {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     infinite: true,
-                    dots: false,
+                    dots: false
                 }
             },
             {
-                breakpoint: 720,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: false,
+                    dots: false
                 }
             },
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 5,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     infinite: true,
-                    dots: false,
+                    dots: false
                 }
             },
             {
                 breakpoint: 1440,
                 settings: {
-                    slidesToShow: 7,
-                    slidesToScroll: 7,
+                    slidesToShow: 6,
+                    slidesToScroll: 6,
                     infinite: true,
                     dots: false
                 }

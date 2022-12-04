@@ -3,15 +3,60 @@
     margin: 0;
 }
 
-.gridcard{
-    width: 200px;
-    height: 300px;
-    position: relative;
-    border-radius: 5%;
-}
-
 .gridcard:hover{
     transform: scale(1.3);
+}
+
+
+
+@media screen and (min-width: 1200px){
+
+    .gridcard{
+        width: 200px;
+        height: 300px;
+        position: relative;
+        border-radius: 5%;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width:1199px)  {
+    .gridcard{
+        width: 150px;
+        height: 250px;
+        position: relative;
+        border-radius: 5%;
+    }
+}
+
+
+@media screen and (min-width: 480px) and (max-width:767px) {
+
+    .components_movieImg{
+        width: 150px;
+    }
+
+    .gridcard{
+        width: 150px;
+        height: 200px;
+        position: relative;
+        border-radius: 5%;
+    }
+}
+
+@media screen and (max-width:479px) {
+
+    .components_movieImg{
+        width: 150px;
+    }
+
+    .gridcard{
+        width: 70px;
+        height: 100px;
+        position: relative;
+        border-radius: 5%;
+    }
 }
 
 /* Arrows */

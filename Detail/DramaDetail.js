@@ -1,6 +1,6 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { API_URL, API_KEY, IMAGE_BASE_URL} from "../components/config";
+import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import MovieInfo from '../components/MovieInfo';
 import Drama from "../components/Drama";
 import DramaMore from '../More/DramaMore';
@@ -13,7 +13,7 @@ function DramaDetail(props) {
 	const navigate = useNavigate();
 
 
-	const getMovies = async() => {
+	const getMovies = async () => {
 		const json = await (
 			await fetch(
 				`${API_URL}movie/${movieId}?api_key=${API_KEY}`
@@ -22,39 +22,37 @@ function DramaDetail(props) {
 		setMovie(json)
 	};
 
-	useEffect(()=> {
+	useEffect(() => {
 		getMovies();
 	}, [])
 
 
-    const navigateDramaMore = () => {
-        navigate("/DramaMore");
-    }
+	const navigateDramaMore = () => {
+		navigate("/DramaMore");
+	}
 
-	
-    console.log(movies);
+
+	console.log(movies);
 	return (
 		<div>
-			<div  className="Detail">
-					<React.Fragment>
+			<div className="Detail">
+				<React.Fragment>
 					<Drama
-					 image={
-						movies.poster_path
-							? `${IMAGE_BASE_URL}original/${movies.poster_path}`
-							: null
-					}
-					 />
+						image={
+							movies.poster_path
+								? `${IMAGE_BASE_URL}original/${movies.poster_path}`
+								: null
+						}
+					/>
 					<MovieInfo
 						movie={movies}
 					/>
-					</React.Fragment>	
-				)
-			
+				</React.Fragment>
 			</div>
 
 			<div className="DetailBtn">
-            <button className="Detailbutton" onClick={navigateDramaMore}>비슷한 영화</button>
-            </div>
+				<button className="Detailbutton" onClick={navigateDramaMore}>비슷한 영화</button>
+			</div>
 		</div>
 	);
 }

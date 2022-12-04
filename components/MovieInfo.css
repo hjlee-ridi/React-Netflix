@@ -9,21 +9,9 @@
     align-content: center;
 }
 
-.MovieInfo{
-    width: 50%;
-    height: 53vh;
-    padding-left: 300px;
-}
-
 .starImg {
     width: 20px;
     height: 20px;
-}
-
-.title {
-    color: white;
-    font-size: 40px;
-    margin-bottom: 50px;
 }
 
 .Info {
@@ -33,4 +21,72 @@
 
 .overview {
     color: white;
+}
+
+
+
+@media screen and (min-width: 1200px){
+    .MovieInfo{
+        width: 50%;
+        height: 53vh;
+        padding-left: 300px;
+        font-size: 22px;
+    }
+
+    
+    .title {
+        color: white;
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+    
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width:1199px)  {
+    .MovieInfo{
+        width: 50%;
+        height: 53vh;
+        padding-left: 200px;
+        font-size: 20px;
+    }
+    
+    .title {
+        color: white;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    
+}
+
+
+@media screen and (min-width: 480px) and (max-width:767px) {
+    .MovieInfo{
+        width: 50%;
+        height: 53vh;
+        padding-left: 50px;
+        font-size: 15px;
+    }
+    
+    .title {
+        color: white;
+        font-size: 21px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width:479px) {
+    .MovieInfo{
+        width: 50%;
+        height: 53vh;
+        padding-left: 21px;
+        font-size: 12px;
+    }
+    
+    .title {
+        color: white;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
 }
