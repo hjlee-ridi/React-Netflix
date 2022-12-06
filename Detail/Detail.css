@@ -4,25 +4,10 @@
 
 }
 
-.Detail {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 330px;
-}
-
-
 h2{
     color: white;
     text-align: center;
-    margin-bottom: 100px;
-}
-
-.DetailMore{
-    width: 93%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-bottom: 50px;
+    
 }
 
 .DetailBtn{
@@ -32,19 +17,99 @@ h2{
     justify-content: center;
 }
 
-
-.Detailbutton{
-    width: 150px;
-    height: 60px;
-    color: white;
-    background-color: black;
-    font-size: 20px;
-}
-
-
 .Detailbutton:hover{
     color: red;
     border-style: outset;
     border-color: red;
+}
+
+
+
+@media screen and (min-width: 1200px){
+
+    .MovieInfo{
+        height: 600px;
+    }
+
+    .Detail {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 330px;
+    }
+    
+
+    .Detailbutton{
+        width: 150px;
+        height: 60px;
+        color: white;
+        background-color: black;
+        font-size: 20px;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width:1199px)  {
+
+    .MovieInfo{
+        height: 500px;
+    }
+
+    .Detail {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 250px;
+    }
+    
+    .Detailbutton{
+        width: 100px;
+        height: 50px;
+        color: white;
+        background-color: black;
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (min-width: 480px) and (max-width:767px) {
+
+    .MovieInfo{
+        height: 400px;
+    }
+
+    .Detail {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 200px;
+    }
+
+    .Detailbutton{
+        width: 100px;
+        height: 60px;
+        color: white;
+        background-color: black;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:479px) {
+
+    .MovieInfo{
+        height: 300px;
+    }
+
+    .Detail {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 150px;
+    }
+
+    .Detailbutton{
+        width: 90px;
+        height: 40px;
+        color: white;
+        background-color: black;
+        font-size: 12px;
+    }
 }
 

@@ -14,6 +14,7 @@ import UpcomingDetail from './Detail/UpcomingDetail';
 import DramaDetail from './Detail/DramaDetail';
 import FantasyDetail from './Detail/FantasyDetail';
 import ActionDetail from './Detail/ActionDetail';
+import HomeSearch from './Search/HomeSearch';
 
 
 
@@ -28,15 +29,15 @@ const App = () => {
           <Route exact path='/Netflix/:movieId' element={<BannerDetail />} />
           <Route exact path='/Netflix/:movieId' element={<TopDetail />} />
           <Route exact path='/UpcomingMore' element={<UpcomingMore />} />
-          <Route exact path='/Upcoming/:movieId' element={<UpcomingDetail />} />
+          <Route exact path='/Netflix/:movieId' element={<UpcomingDetail />} />
           <Route exact path='/DramaMore' element={<DramaMore />} />
-          <Route exact path='/Drama/:movieId' element={<DramaDetail />} />
+          <Route exact path='/Netflix/:movieId' element={<DramaDetail />} />
           <Route exact path='/ActionMore' element={<ActionMore />} />
-          <Route exact path='/Action/:movieId' element={<ActionDetail />} />
+          <Route exact path='/Netflix/:movieId' element={<ActionDetail />} />
           <Route exact path='/FantasyMore' element={<FantasyMore />} />
-          <Route exact path='/Fantasy/:movieId' element={<FantasyDetail />} />
-          
+          <Route exact path='/Netflix/:movieId' element={<FantasyDetail />} />
         </Routes>
+        <HomeSearch />
         <Footer />
       </BrowserRouter>
     </div>

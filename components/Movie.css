@@ -16,6 +16,7 @@
         height: 300px;
         position: relative;
         border-radius: 5%;
+        padding: 5px;
     }
 }
 
@@ -27,6 +28,7 @@
         height: 250px;
         position: relative;
         border-radius: 5%;
+        padding: 5px;
     }
 }
 
@@ -42,13 +44,14 @@
         height: 200px;
         position: relative;
         border-radius: 5%;
+        padding: 5px;
     }
 }
 
 @media screen and (max-width:479px) {
 
     .components_movieImg{
-        width: 150px;
+        width: 130px;
     }
 
     .gridcard{
@@ -56,6 +59,7 @@
         height: 100px;
         position: relative;
         border-radius: 5%;
+        padding: 5px;
     }
 }
 

@@ -6,7 +6,7 @@ function Upcoming(props) {
     return (
         <div>
             <div className='components_movieImg'>
-                <Link to={`/Upcoming/${props.id}`}>
+                <Link to={`/Netflix/${props.id}`}>
                     <img src={props.image} alt={props.title}  className='gridcard'   />
                 </Link>
             </div>
