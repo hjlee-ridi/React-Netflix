@@ -14,8 +14,8 @@ import UpcomingDetail from './Detail/UpcomingDetail';
 import DramaDetail from './Detail/DramaDetail';
 import FantasyDetail from './Detail/FantasyDetail';
 import ActionDetail from './Detail/ActionDetail';
+import Search_box from './Search/Search_box';
 import HomeSearch from './Search/HomeSearch';
-
 
 
 const App = () => {
@@ -37,6 +37,7 @@ const App = () => {
           <Route exact path='/FantasyMore' element={<FantasyMore />} />
           <Route exact path='/Netflix/:movieId' element={<FantasyDetail />} />
         </Routes>
+        <Search_box />
         <HomeSearch />
         <Footer />
       </BrowserRouter>
