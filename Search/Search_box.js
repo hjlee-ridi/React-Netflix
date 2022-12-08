@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 
 
 function Search_box() {
@@ -13,8 +13,11 @@ function Search_box() {
 
   return (
     <div>
-      <input type="text" value={Search} onChange={onChange} minLength="1" style={{color: "white"}} />
+      <form action="./HomeSearch" method="post"
+      >
+      <input type="text" value={Search} onChange={onChange} minLength="1" placeholder='Title input' style={{color: "white"}} />
       <input type="submit" value="확인" />
+      </form>
     </div>
   )
 }
