@@ -2,31 +2,49 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import Search from "../components/Search";
-import Search_box from "./Search_box";
 
 
 
-function HomeSearch(props) {
-    // const [searchs, setSearch] = useState(props.age);
-    // const navigate = useNavigate();
+
+function HomeSearch() {
+    const [searchs, setSearchs] = useState([]);
+    const navigate = useNavigate();
+    const [movie_title, setSearch] = useState(" ");
+    const onChange = (e) => {
+        setSearch(e.target.value)
+    };
+
+    useEffect(() => {
+        const endpoint = `${API_URL}/search/movie?api_key=${API_KEY}&language=en-US&page=1&query=${movie_title}`;
+        fetchMovies(endpoint)
+        console.log(endpoint);
+    }, [])
+
+    const fetchMovies = (endpoint) => {
+        fetch(endpoint)
+            .then((response) => response.json())
+            .then(response => {
+                setSearchs([...searchs, ...response.results]);
+            });
+    }
 
 
-    // const add = (e) => {
-    //     console.log(searchs);
-    // }
-        
 
 
-    // const navigateSearch = () => {
-    //     navigate("/DramaMore");
-    // }
+    console.log(movie_title);
 
-console.log(props.age);
+    const navigateSearch = () => {
+        navigate("/DramaMore");
+    }
+    // console.log(searchs);
+
     return (
         <div className="search">
-           
-            <h3 style={{color: "white"}}>{props.age}</h3>
-            {/* {searchs && searchs.map((search, index) => {
+            <div>
+                <input type="text" value={movie_title} onChange={onChange} minLength="1" placeholder='Title input' style={{ color: "white" }} />
+                <input type="submit" value="확인" onClick={navigateSearch}/>
+            </div>
+            {movie_title && searchs.map((search, index) => {
                 return (
                     <React.Fragment key={index}>
                         <Search
@@ -40,7 +58,7 @@ console.log(props.age);
                         />
                     </React.Fragment>
                 );
-            })} */}
+            })}
         </div>
     );
 }

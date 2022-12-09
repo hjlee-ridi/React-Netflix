@@ -36,8 +36,8 @@ const App = () => {
           <Route exact path='/Netflix/:movieId' element={<ActionDetail />} />
           <Route exact path='/FantasyMore' element={<FantasyMore />} />
           <Route exact path='/Netflix/:movieId' element={<FantasyDetail />} />
+          {/* <Route exact path='/HomeSearch' element={<HomeSearch/>} /> */}
         </Routes>
-        <Search_box />
         <HomeSearch />
         <Footer />
       </BrowserRouter>

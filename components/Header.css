@@ -16,7 +16,8 @@ button {
     img {
         width: 150px;
         height: 150px;
-        position: absolute;
+        position: flex;
+        justify-content: space-around;
         top: 20px;
         left: 60px;
         z-index: 999;
