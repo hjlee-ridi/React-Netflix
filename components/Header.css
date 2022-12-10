@@ -13,13 +13,47 @@ button {
 
 @media screen and (min-width: 1200px){
 
-    img {
+    /* .Header{
+        width: 100vw;
+        height: 200px;
+        background-color: none;
+        display: flex;
+        justify-content: space-between;
+        z-index: 99999;
+    }
+
+    .Header .logo {
         width: 150px;
         height: 150px;
-        position: flex;
-        justify-content: space-around;
+
+
+    }
+
+    .Header .search{
+        width: 150px;
+        height: 150px;
+
+    } */
+    .Header{
+        width: 0;
+        height: 0;
+    }
+
+    .Header .logo {
+        width: 150px;
+        height: 150px;
+        position: absolute;
         top: 20px;
         left: 60px;
+        z-index: 999;
+    }
+
+    .Header .search {
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top: 60px;
+        left: 93vw;
         z-index: 999;
     }
 }

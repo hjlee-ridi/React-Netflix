@@ -7,12 +7,12 @@ import "./Header.css";
 
 function Header() {
     return (
-        <div>
+        <div className="Header">
             <Link to="/">
-                <img src={logo} alt="netflix" />
+                <img src={logo} alt="netflix" className="logo"/>
             </Link>
-            <Link to="/">
-                <img src={search} alt="netflix" />
+            <Link to="/Search">
+                <img src={search} alt="Search" className="search" />
             </Link>
         </div>
     )
