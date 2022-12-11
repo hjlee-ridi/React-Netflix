@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import Movie from "../components/Movie";
 
@@ -14,14 +14,18 @@ function HomeSearch() {
         setMovie_title(e.target.value)
     }
 
+    const getAPIUrl = useCallback(() => {
+        return  `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${movie_title}`;
+    }, [movie_title]);
+
+    
 
 
     useEffect(() => {
-        const endpoint = `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&&query=${movie_title}`;
+        const endpoint = getAPIUrl();
         fetchMovies(endpoint)
         console.log(endpoint);
-        return () => console.log("bye");
-    }, [movie_title])
+    }, [getAPIUrl])
 
 
 
@@ -34,6 +38,7 @@ function HomeSearch() {
     }
 
     console.log(searchs);
+    console.log(movie_title);
 
     return (
         <div className="containers">
