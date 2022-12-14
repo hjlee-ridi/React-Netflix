@@ -86,13 +86,8 @@ function HomeFantasy(props) {
             });
     }
 
-    const loadMore = () => {
 
-        const endpoint = `${API_URL}${FANTASY}&api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
-        fetchMovies(endpoint)
-    }
-
-    const navigateDramaMore = () => {
+    const navigateFantasyMore = () => {
         navigate("/FantasyMore");
     }
 
@@ -107,7 +102,7 @@ function HomeFantasy(props) {
                 <div>
                 <div className="container">
                 <h3 className="Header">Fantasy</h3>
-                <button className="Morebtn" onClick={navigateDramaMore}>More</button>
+                <button className="Morebtn" onClick={navigateFantasyMore}>More</button>
             </div> 
             <Slider {...cardsettings} className="slider">
                 {fantasy && fantasy.map((fantasy, index) => {

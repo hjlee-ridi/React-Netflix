@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 import "./Home.css";
 
 
-function HomeTop(props) {
+function HomeTop() {
 	const [movies, setMovies] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);

@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION} from "../components/config";
 import MovieInfo from '../components/MovieInfo';
 import Action from "../components/Action";
-import ActionMore from '../More/ActionMore';
 import './Detail.css';
 
 
@@ -28,6 +27,7 @@ function ActionDetail() {
         navigate("/ActionMore");
     }
 	
+	console.log(getMovies);
 
 	return (
 		<div>

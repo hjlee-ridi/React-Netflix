@@ -23,6 +23,8 @@ function UpcomingMore() {
             });
     }
 
+    
+
     const loadMore = () => {
 
         const endpoint = `${API_URL}/movie/upcoming?api_key=${API_KEY}&language=en-US&page=${loadMorePage + 1}`;
