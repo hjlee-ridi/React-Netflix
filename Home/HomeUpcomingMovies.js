@@ -5,7 +5,7 @@ import { API_URL, API_KEY, IMAGE_BASE_URL} from "../components/config";
 import "slick-carousel/slick/slick.css";
 import "./Home.css";
 import Loading from "../components/Loading";
-import Upcoming from "../components/Upcoming";
+import Movie from "../components/Movie";
 
 
 function HomeUpcomingMovies() {
@@ -105,7 +105,7 @@ function HomeUpcomingMovies() {
                 {UpcomingMovies && UpcomingMovies.map((upcoming, index) => {
                     return (
                         <React.Fragment key={index}>
-                            <Upcoming
+                            <Movie
                                 image={
                                     upcoming.poster_path
                                         ? `${IMAGE_BASE_URL}w500/${upcoming.poster_path}`

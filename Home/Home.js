@@ -5,7 +5,6 @@ import HomeUpcomingMovies from "./HomeUpcomingMovies";
 import HomeDrama from "./HomeDrama";
 import HomeAction from "./HomeAction";
 import HomeFantasy from "./HomeFantasy";
-import HomeSearch from "../Search/HomeSearch"
 
 function Home() {
     return(
@@ -16,7 +15,6 @@ function Home() {
            <HomeDrama />
            <HomeAction />
            <HomeFantasy />
-           <HomeSearch />
         </div>
     )
 }

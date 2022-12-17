@@ -11,6 +11,7 @@
 
 .Top{
     margin-top: 150px;
+    height: 500px;
 }
 
 .slider{
@@ -21,15 +22,16 @@
     .container {
         display: flex;
         justify-content: space-between;
-        margin: 0 50px;
+        margin: 30px 40px;
         max-width: 95%;
     }
 
     .Header {
-        width: 500px;
         color: white;
         z-index: 3;
         font-size: 30px;
+        margin-bottom: 50px;
+        white-space: nowrap;
     }
     
     .Morebtn {
@@ -55,6 +57,7 @@
         font-size: 24px;
         color: white;
         z-index: 3;
+        white-space: nowrap;
     }
     
     .Morebtn {
@@ -79,6 +82,7 @@
         font-size: 18px;
         color: white;
         z-index: 3;
+        white-space: nowrap;
     }
     
     .Morebtn {
@@ -102,6 +106,7 @@
         font-size: 18px;
         color: white;
         z-index: 3;
+        white-space: nowrap;
     }
     
     .Morebtn {

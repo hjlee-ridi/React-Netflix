@@ -27,7 +27,7 @@ function ActionDetail() {
         navigate("/ActionMore");
     }
 	
-	console.log(getMovies);
+
 
 	return (
 		<div>

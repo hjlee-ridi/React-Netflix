@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA } from "../components/config";
-import Drama from "../components/Drama";
+import Movie from "../components/Movie";
 import "slick-carousel/slick/slick.css";
 import "./Home.css";
 import Loading from "../components/Loading";
@@ -107,7 +107,7 @@ function HomeDrama() {
                             {dramas && dramas.map((drama, index) => {
                                 return (
                                     <React.Fragment key={index}>
-                                        <Drama
+                                        <Movie
                                             image={
                                                 drama.poster_path
                                                     ? `${IMAGE_BASE_URL}w500/${drama.poster_path}`

@@ -2,13 +2,13 @@ import React, { useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION } from "../components/config";
-import Action from "../components/Action";
+import Movie from "../components/Movie";
 import "slick-carousel/slick/slick.css";
 import "./Home.css";
 import Loading from "../components/Loading";
 
 
-function HomeAction(props) {
+function HomeAction() {
     const [Actions, setAction] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
@@ -106,7 +106,7 @@ function HomeAction(props) {
                 {Actions && Actions.map((action, index) => {
                     return (
                         <React.Fragment key={index}>
-                            <Action
+                            <Movie
                                 image={
                                     action.poster_path
                                         ? `${IMAGE_BASE_URL}w500/${action.poster_path}`
