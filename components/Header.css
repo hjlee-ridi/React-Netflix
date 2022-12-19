@@ -13,30 +13,9 @@ button {
 
 @media screen and (min-width: 1200px){
 
-    /* .Header{
-        width: 100vw;
-        height: 200px;
-        background-color: none;
-        display: flex;
-        justify-content: space-between;
-        z-index: 99999;
-    }
-
-    .Header .logo {
-        width: 150px;
-        height: 150px;
-
-
-    }
-
-    .Header .search{
-        width: 150px;
-        height: 150px;
-
-    } */
     .Header{
-        width: 0;
-        height: 0;
+        width: 100vh;
+        height: 0px;
     }
 
     .Header .logo {

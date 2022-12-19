@@ -9,7 +9,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-function HomeBanner(props) {
+
+function HomeBanner() {
 	const [movies, setMovies] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);

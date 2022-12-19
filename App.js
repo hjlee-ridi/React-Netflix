@@ -3,14 +3,13 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './Home/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import "./App.css";
 import UpcomingMore from './More/UpcomingMore';
 import DramaMore from './More/DramaMore';
 import ActionMore from './More/ActionMore';
 import FantasyMore from './More/FantasyMore';
-import BannerDetail from './Detail/BannerDetail';
+import Detail from './Detail/Detail';
 import HomeSearch from './Search/HomeSearch';
-
+import "./App.css";
 
 const App = () => {
  
@@ -20,7 +19,7 @@ const App = () => {
       <Header />
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path='/Netflix/:movieId' element={<BannerDetail />} />
+          <Route exact path='/Netflix/:movieId' element={<Detail />} />
           <Route exact path='/UpcomingMore' element={<UpcomingMore />} />
           <Route exact path='/DramaMore' element={<DramaMore />} />
           <Route exact path='/ActionMore' element={<ActionMore />} />
