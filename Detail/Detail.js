@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
-// import Movie from "../components/Movie";
-// import MovieInfo from '../components/MovieInfo';
-// import './Detail.css';
 import Detail from "../components/Detail";
-import Movie from "../components/Movie";
 
 function BannerDetail() {
 	const { movieId } = useParams();
 	const [movies, setMovie] = useState([]);
 	const navigate = useNavigate();
+	let genres = [];
 
 
 	const getMovies = async () => {
@@ -38,26 +35,29 @@ function BannerDetail() {
 			<div className="Detail">
 				<React.Fragment>
 					<Detail
-						image={
+						backdrop_path={
 							movies.backdrop_path
 								? `${IMAGE_BASE_URL}original/${movies.backdrop_path}`
 								: null
 						}
 						title={movies.original_title}
-						date={movies.release_date}
-						runtime={movies.runtime}
-						star={movies.vote_average}
-						overview={movies.overview}
-					/>
-					<Movie
-						image={
+						poster_path={
 							movies.poster_path
 								? `${IMAGE_BASE_URL}w500/${movies.poster_path}`
 								: null
 						}
+						overview={movies.overview}
+						let genresList = {genres.map((genres, i) => {
+							
+							 {genres.name}
+						})}
+						date={movies.release_date}
+						runtime={movies.runtime}
+						star={movies.vote_average}
 						key={movies.id}
 						id={movies.id}
 					/>
+					
 				</React.Fragment>
 			</div>
 

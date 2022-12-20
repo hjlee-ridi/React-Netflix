@@ -15,15 +15,56 @@
      background-repeat: no-repeat;
      opacity: 0.6;
      position: relative;
+     border-color: black;
 }
 
 .rectangle {
     width: 80vw;
     height: 80vh;
     background: rgb(128, 127, 127);
-    opacity: 0.8;
+    opacity: 0.9;
     z-index: 999;
     position: absolute;
-    top: 10%;
+    top: 12%;
     left: 10%;
   }
+
+
+.image{
+    width: 30vw;
+    height: 80vh;
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    z-index: 999;
+}
+
+
+.MovieInfo{
+    width: 50%;
+    height: 80vh;
+    z-index: 999;
+    position: absolute;
+    top: 20%;
+    left: 41%;
+}
+
+
+.title{
+    color: white;
+    z-index: 999;
+    font-size: 55px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+.overview{
+    color: white;
+    text-align: center;
+}
+
+
+.genres{
+    color: white;
+}
