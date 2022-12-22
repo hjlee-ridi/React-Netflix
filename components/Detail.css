@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+ul{
+    list-style:none;
+    padding-left:0px;
+}
+
 .Detail{
     height: 100vh;
     width: 100%;
@@ -45,7 +50,7 @@
     height: 80vh;
     z-index: 999;
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 45%;
 }
 
@@ -67,19 +72,29 @@
     margin-bottom: 100px;
 }
 
+
+.Detail .genreList {
+    color: rgb(255, 138, 71);
+    font-size: 50px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+
 .MovieInfo{
     width: 100%;
     height: 30%;
-    background-color: antiquewhite;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
 }
 
-h4{
+.Detail h4{
     color: orange;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
@@ -107,9 +122,11 @@ h4{
 }
 
 
-h3{
+.Detail h3{
     color: white;
     display: flex;
     justify-content: center;
     margin-top: 150px;
 }
+
+

@@ -27,24 +27,6 @@ function BannerDetail() {
 
 
 
-	// useEffect(() => {
-    //     const endpoint = `${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US`;
-    //     fetchMovies(endpoint)
-    // }, [])
-
-    // const fetchMovies = (endpoint) => {
-    //     fetch(endpoint)
-    //         .then((response) => response.json())
-    //         .then(response => {
-    //             setMore([...More, ...response.results]);
-    //         });
-    // }
-
-
-	// const navigateDramaMore = () => {
-	// 	navigate("/DramaMore");
-	// }
-
 	return (
 		<div>
 			<div className="Detail">
@@ -62,11 +44,7 @@ function BannerDetail() {
 								: null
 						}
 						overview={movies.overview}
-						// let genresList = {genres.map((genres, i) => {
-						// 	return (
-						// 		{genres.name} 
-						// 	)
-						// })}
+						genres={movies.genres}
 						release_date={movies.release_date}
 						runtime={movies.runtime}
 						vote_average={movies.vote_average}
@@ -77,7 +55,7 @@ function BannerDetail() {
 				</React.Fragment>
 			</div>
 			<div>
-			{/* {More.results.map((movie, index) => {
+			{/* {More.map((movie, index) => {
 							return (
 								<React.Fragment key={index}>
 									<Movie
