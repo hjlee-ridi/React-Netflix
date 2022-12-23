@@ -31,16 +31,16 @@ function Detail({id, title, backdrop_path, poster_path, overview, genres ,vote_a
     );
 }
 
-Detail.propTypes = {
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    backdrop_path: PropTypes.string.isRequired,
-    poster_path: PropTypes.string.isRequired,
-    overview: PropTypes.string.isRequired,
-    genres: PropTypes.string.isRequired,
-    vote_average: PropTypes.number.isRequired,
-    runtime: PropTypes.number.isRequired,
-    release_date: PropTypes.number.isRequired
-  };
+// Detail.propTypes = {
+//     id: PropTypes.number.isRequired,
+//     title: PropTypes.string.isRequired,
+//     backdrop_path: PropTypes.string.isRequired,
+//     poster_path: PropTypes.string.isRequired,
+//     overview: PropTypes.string.isRequired,
+//     genres: PropTypes.string.isRequired,
+//     vote_average: PropTypes.number.isRequired,
+//     runtime: PropTypes.number.isRequired,
+//     release_date: PropTypes.number.isRequired
+//   };
 
 export default Detail;

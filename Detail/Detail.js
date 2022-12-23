@@ -1,29 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import Detail from "../components/Detail";
 import Movie from "../components/Movie";
 
 function BannerDetail() {
 	const { movieId } = useParams();
-	const [movies, setMovie] = useState([]);
+	const [movies, setMovie] = useState(" ");
 	const [More, setMore] = useState([]);
 	const navigate = useNavigate();
-	let genres = [];
 
-
-	const getMovies = async () => {
-		const json = await (
-			await fetch(
-				`${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
-			)
-		).json();
-		setMovie(json)
-	};
 
 	useEffect(() => {
-		getMovies();
-	}, [])
+		axios
+		  .all(
+			[axios.get(`${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`), 
+			axios.get(`${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US`)]
+			.then(
+			  axios.spread((response1, response2) => {
+				setMovie(response1);
+				setMore([...More, ...response2.results]);
+			  })
+			)
+		  )
+	  }, []);
+
 
 
 
@@ -55,21 +57,7 @@ function BannerDetail() {
 				</React.Fragment>
 			</div>
 			<div>
-			{/* {More.map((movie, index) => {
-							return (
-								<React.Fragment key={index}>
-									<Movie
-										image={
-											movie.poster_path
-												? `${IMAGE_BASE_URL}w500/${movie.poster_path}`
-												: null
-										}
-										key={movie.id}
-										id={movie.id}
-									/>
-								</React.Fragment>
-							);
-						})} */}
+			
 			</div>
 			{/* <div className="DetailBtn">
 				<button className="Detailbutton" onClick={navigateDramaMore}>비슷한 영화</button>
