@@ -8,24 +8,28 @@ import Movie from "../components/Movie";
 function BannerDetail() {
 	const { movieId } = useParams();
 	const [movies, setMovie] = useState(" ");
-	const [More, setMore] = useState([]);
+	const [loadMorePage, setLoadMorePage] = useState(0);
 	const navigate = useNavigate();
 
 
-	useEffect(() => {
-		axios
-		  .all(
-			[axios.get(`${API_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`), 
-			axios.get(`${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US`)]
-			.then(
-			  axios.spread((response1, response2) => {
-				setMovie(response1);
-				setMore([...More, ...response2.results]);
-			  })
-			)
-		  )
-	  }, []);
 
+	const getMovies = async () => {
+		const json = await (
+			await fetch(
+				`${API_URL}movie/${movieId}?api_key=${API_KEY}`
+			)
+		).json();
+		setMovie(json)
+	};
+
+	useEffect(() => {
+		getMovies();
+	}, [])
+
+
+	const navigateDramaMore = () => {
+		navigate("/DramaMore");
+	}
 
 
 

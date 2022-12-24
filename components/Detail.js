@@ -25,22 +25,21 @@ function Detail({id, title, backdrop_path, poster_path, overview, genres ,vote_a
                     <div><h4>Scope</h4> <p className='star'>{vote_average}/10</p></div>
                 </div>
             </div>
-            <h3>추천영화</h3>
         </div>
 
     );
 }
 
-// Detail.propTypes = {
-//     id: PropTypes.number.isRequired,
-//     title: PropTypes.string.isRequired,
-//     backdrop_path: PropTypes.string.isRequired,
-//     poster_path: PropTypes.string.isRequired,
-//     overview: PropTypes.string.isRequired,
-//     genres: PropTypes.string.isRequired,
-//     vote_average: PropTypes.number.isRequired,
-//     runtime: PropTypes.number.isRequired,
-//     release_date: PropTypes.number.isRequired
-//   };
+Detail.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+    genres: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    runtime: PropTypes.number.isRequired,
+    release_date: PropTypes.number.isRequired
+  };
 
 export default Detail;

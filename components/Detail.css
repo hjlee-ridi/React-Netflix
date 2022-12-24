@@ -78,8 +78,12 @@ ul{
     font-size: 50px;
     font-weight: 700;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 50px;
+}
+
+.Detail .genre{
+    padding: 10px;
 }
 
 
