@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.input{
+    position: relative;
+}
+
+.input .inputbox{
+    width: 500px;
+    height: 60px;
+    border-radius: 5px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 200px 0;
+}
+
+.input .inputReset{
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border: none;
+    position: absolute;
+    top: 32px;
+    left: 180px;
+    margin: 200px 0;
+}

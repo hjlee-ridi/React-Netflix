@@ -17,14 +17,9 @@ function HomeSearch() {
         setQuery(e.target.value)
     }
 
-
-
-
     const fetchSearchAPI = () => {
         return axios.get(`${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${query}`);
     };
-
-
 
     const { data } = useQuery(['index', query], fetchSearchAPI, {
         select: (data) => {
@@ -36,14 +31,17 @@ function HomeSearch() {
         cacheTime: 6 * 10 * 1000
     });
 
-    console.log(data);
 
+    const inputReset = () => {
+        setQuery(" ")
+    }
 
 
     return (
         <div className="containers">
-            <div>
-                <input type="text" value={query} onChange={onChange} minLength="1" placeholder='Title input' />
+            <div className="input">
+                <input type="text" value={query} onChange={onChange} minLength="1" placeholder='Search...' className="inputbox" />
+                <button className="inputReset" onClick={inputReset}>X</button>
             </div>
             {data && data.map((movieQuery, index) => {
                 return (
