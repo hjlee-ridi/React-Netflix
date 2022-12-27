@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL, DRAMA } from "../components/config";
-import Drama from "../components/Drama";
+import Movie from "../components/Movie";
 import "./More.css";
 
 
@@ -35,7 +35,7 @@ function DramaMore() {
                     {dramas && dramas.map((drama, index) => {
                         return (
                             <React.Fragment key={index}>
-                                <Drama
+                                <Movie
                                     image={
                                         drama.poster_path
                                             ? `${IMAGE_BASE_URL}w500/${drama.poster_path}`

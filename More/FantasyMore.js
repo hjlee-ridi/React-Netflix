@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL, FANTASY } from "../components/config";
-import Fantasy from "../components/Fantasy";
+import Movie from "../components/Movie";
 import "./More.css";
 
 
@@ -35,7 +35,7 @@ function FantasyMore() {
                     {Fantasys && Fantasys.map((fantasy, index) => {
                         return (
                             <React.Fragment key={index}>
-                                <Fantasy
+                                <Movie
                                     image={
                                         fantasy.poster_path
                                             ? `${IMAGE_BASE_URL}w500/${fantasy.poster_path}`

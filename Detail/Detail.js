@@ -27,9 +27,9 @@ function BannerDetail() {
 	}, [])
 
 
-	const navigateDramaMore = () => {
-		navigate("/DramaMore");
-	}
+	// const navigateDramaMore = () => {
+	// 	navigate("/DramaMore");
+	// }
 
 
 
@@ -60,12 +60,6 @@ function BannerDetail() {
 					
 				</React.Fragment>
 			</div>
-			<div>
-			
-			</div>
-			{/* <div className="DetailBtn">
-				<button className="Detailbutton" onClick={navigateDramaMore}>비슷한 영화</button>
-			</div> */}
 		</div>
 	);
 }

@@ -4,11 +4,11 @@
 }
 
 .containers {
-    width: 93%;
+    width: 95%;
 	display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-bottom: 50px;
+    margin: 50px;
 }
 
 

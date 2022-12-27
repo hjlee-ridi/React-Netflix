@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import Movie from "../components/Movie";
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
@@ -38,11 +38,12 @@ function HomeSearch() {
 
 
     return (
-        <div className="containers">
+        <div className="search">
             <div className="input">
                 <input type="text" value={query} onChange={onChange} minLength="1" placeholder='Search...' className="inputbox" />
                 <button className="inputReset" onClick={inputReset}>X</button>
             </div>
+            <div className="Movie">
             {data && data.map((movieQuery, index) => {
                 return (
                     <React.Fragment key={index}>
@@ -63,6 +64,7 @@ function HomeSearch() {
                     </React.Fragment>
                 );
             })}
+            </div>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL} from "../components/config";
-import Upcoming from "../components/Upcoming";
+import Movie from "../components/Movie";
 import "./More.css";
 
 
@@ -37,7 +37,7 @@ function UpcomingMore() {
                     {UpcomingMovies && UpcomingMovies.map((upcoming, index) => {
                         return (
                             <React.Fragment key={index}>
-                                <Upcoming
+                                <Movie
                                     image={
                                         upcoming.poster_path
                                             ? `${IMAGE_BASE_URL}w500/${upcoming.poster_path}`

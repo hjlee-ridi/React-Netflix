@@ -5,12 +5,10 @@ import './Movie.css';
 
 function Movie(props) {
     return (
-        <div>
-            <div style={{ marginBottom: '50px' }}>
+        <div  style={{ marginBottom: '50px' }}>
                 <Link to={`/Netflix/${props.id}`}>
                     <img src={props.image} alt={props.title} className='gridcard'  />
                 </Link>
-            </div>
         </div>
     );
 }

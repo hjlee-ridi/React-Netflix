@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL, ACTION } from "../components/config";
-import Action from "../components/Action";
 import "./More.css";
+import Movie from "../components/Movie";
 
 
 function ActionMore() {
@@ -35,7 +35,7 @@ function ActionMore() {
                     {actions && actions.map((action, index) => {
                         return (
                             <React.Fragment key={index}>
-                                <Action
+                                <Movie
                                     image={
                                         action.poster_path
                                             ? `${IMAGE_BASE_URL}w500/${action.poster_path}`
