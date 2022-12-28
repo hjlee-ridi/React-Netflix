@@ -96,7 +96,7 @@ function HomeTop() {
 				<div className="container">
 					<h3 className="Header">Today Top 20</h3>
 				</div>
-				<div>
+				<div className="Movies">
 					<Slider {...cardsettings} className="slider">
 						{movies.results.map((movie, index) => {
 							return (

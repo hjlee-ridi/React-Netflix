@@ -5,7 +5,7 @@ import './Movie.css';
 
 function Movie(props) {
     return (
-        <div  style={{ marginBottom: '50px' }}>
+        <div className="Movie">
                 <Link to={`/Netflix/${props.id}`}>
                     <img src={props.image} alt={props.title} className='gridcard'  />
                 </Link>

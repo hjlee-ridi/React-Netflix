@@ -43,9 +43,8 @@
 
 
 .search .Movie{
-    width: 95%;
 	display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 50px;
+    
 }
