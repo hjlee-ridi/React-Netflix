@@ -8,6 +8,10 @@
     transform: scale(1.1);
 }
 
+.gridcardLink{
+    width: 200px;
+    height: 300px;
+}
 
 
 @media screen and (min-width: 1200px){
@@ -17,6 +21,10 @@
         position: relative;
         border-radius: 5%;
         padding: 5px;
+    }
+    .gridcardLink{
+        width: 200px;
+        height: 300px;
     }
 }
 

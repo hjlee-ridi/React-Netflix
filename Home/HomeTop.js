@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "axios";
 import Movie from "../components/Movie";
@@ -8,13 +8,13 @@ import "./Home.css";
 
 
 function HomeTop() {
-	const [movies, setMovies] = useState(null);
-	const [loading, setLoading] = useState(false);
-	const [error, setError] = useState(null);
+    const [movies, setMovies] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     const cardsettings = {
         dots: false,
         infinite: true,
-        slidesToShow: 8,
+        slidesToShow: 9,
         slidesToScroll: 8,
         responsive: [
             {
@@ -66,57 +66,61 @@ function HomeTop() {
     };
 
 
-	useEffect(() => {
-		const fetchUsers = async () => {
-			try {
-				setError(null);
-				setMovies(null);
-				setLoading(true);
-				const response = await axios.get(
-					`${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US`
-				);
-				setMovies(response.data);
-			} catch (e) {
-				setError(e);
-			}
-			setLoading(false);
-		};
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                setError(null);
+                setMovies(null);
+                setLoading(true);
+                const response = await axios.get(
+                    `${API_URL}/movie/popular?api_key=${API_KEY}&language=en-US`
+                );
+                setMovies(response.data);
+            } catch (e) {
+                setError(e);
+            }
+            setLoading(false);
+        };
 
-		fetchUsers();
-	}, []);
+        fetchUsers();
+    }, []);
 
-	if (loading) return <div><Loading /></div>;
-	if (error) return <div>에러가 발생했습니다</div>;
-	if (!movies) return null;
+    if (loading) return <div><Loading /></div>;
+    if (error) return <div>에러가 발생했습니다</div>;
+    if (!movies) return null;
 
 
 
-	return (
-		<div className="Top">
-				<div className="container">
-					<h3 className="Header">Today Top 20</h3>
-				</div>
-				<div className="Movies">
-					<Slider {...cardsettings} className="slider">
-						{movies.results.map((movie, index) => {
-							return (
-								<React.Fragment key={index}>
-									<Movie
-										image={
-											movie.poster_path
-												? `${IMAGE_BASE_URL}w500/${movie.poster_path}`
-												: null
-										}
-										key={movie.id}
-										id={movie.id}
-									/>
-								</React.Fragment>
-							);
-						})}
-					</Slider>
-				</div>
-				</div>
-	);
+    return (
+        <div className="Top">
+            <div className="container">
+                <h3 className="Header">Today Top 20</h3>
+            </div>
+            <div className="Movies">
+                <Slider {...cardsettings} className="slider">
+                    {movies.results.map((movie, index) => {
+                        return (
+                            <div className="abcd">
+                            <React.Fragment key={index}>
+                                <div>
+                                <Movie
+                                    image={
+                                        movie.poster_path
+                                            ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`
+                                            : null
+                                    }
+                                    key={movie.id}
+                                    id={movie.id}
+                                />
+                                </div>
+                            </React.Fragment>
+                            </div>
+                        );
+                    })}
+                </Slider>
+            </div>
+        </div>
+    );
 }
 
 export default HomeTop;
