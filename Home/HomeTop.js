@@ -14,7 +14,7 @@ function HomeTop() {
     const cardsettings = {
         dots: false,
         infinite: true,
-        slidesToShow: 9,
+        slidesToShow: 8,
         slidesToScroll: 8,
         responsive: [
             {

@@ -102,22 +102,26 @@ function HomeUpcomingMovies() {
                 <button className="Morebtn" onClick={navigateUpcomingMore}>More</button>
             </div> 
             <Slider {...cardsettings} className="slider">
-                {UpcomingMovies && UpcomingMovies.map((upcoming, index) => {
-                    return (
-                        <React.Fragment key={index}>
-                            <Movie
-                                image={
-                                    upcoming.poster_path
-                                        ? `${IMAGE_BASE_URL}w500/${upcoming.poster_path}`
-                                        : null
-                                }
-                                key={upcoming.id}
-                                id={upcoming.id}
-                            />
-                        </React.Fragment>
-                    );
-                })}
-            </Slider>
+                    {UpcomingMovies.results.map((movie, index) => {
+                        return (
+                            <div className="card-margin">
+                            <React.Fragment key={index}>
+                                <div>
+                                <Movie
+                                    image={
+                                        movie.poster_path
+                                            ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`
+                                            : null
+                                    }
+                                    key={movie.id}
+                                    id={movie.id}
+                                />
+                                </div>
+                            </React.Fragment>
+                            </div>
+                        );
+                    })}
+                </Slider>
             </div>
             )}
         </div>
