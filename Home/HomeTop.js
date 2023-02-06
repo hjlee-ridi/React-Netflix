@@ -14,8 +14,8 @@ function HomeTop() {
     const cardsettings = {
         dots: false,
         infinite: true,
-        slidesToShow: 8,
-        slidesToScroll: 8,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         responsive: [
             {
                 breakpoint: 320,
@@ -100,7 +100,7 @@ function HomeTop() {
                 <Slider {...cardsettings} className="slider">
                     {movies.results.map((movie, index) => {
                         return (
-                            <div className="abcd">
+                            <div className="card-margin">
                             <React.Fragment key={index}>
                                 <div>
                                 <Movie

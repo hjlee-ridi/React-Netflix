@@ -8,24 +8,21 @@
     transform: scale(1.1);
 }
 
-.gridcardLink{
-    width: 200px;
-    height: 300px;
-}
-
 
 @media screen and (min-width: 1200px){
     .gridcard{
-        width: 230px;
+        width: 200px;
         height: 300px;
-        position: relative;
         border-radius: 5%;
         padding: 5px;
     }
+
     .gridcardLink{
-        width: 200px;
+        margin: 50px;
+        width: 250px;
         height: 300px;
     }
+    
 }
 
 
@@ -75,19 +72,26 @@
 
 .slick-prev {
     z-index: 9999;
+    padding-right: 50px;
   }
+
+.slick-next{
+    padding-right: 50px;
+}
 
 .slick-prev,
 .slick-next
 {
     font-size: 50px;
     line-height: 50px;
+    /* display: flex;
+    justify-items: center;
+    align-items: center; */
+    
     position: absolute;
     top: 45%;
-    left: 97%;
-    right: 97%;
-   
-    display: block;
+    
+    
     width: 50px;
     height: 50px;
 

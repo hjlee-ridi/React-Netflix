@@ -102,26 +102,27 @@ function HomeUpcomingMovies() {
                 <button className="Morebtn" onClick={navigateUpcomingMore}>More</button>
             </div> 
             <Slider {...cardsettings} className="slider">
-                    {UpcomingMovies.results.map((movie, index) => {
-                        return (
-                            <div className="card-margin">
-                            <React.Fragment key={index}>
-                                <div>
-                                <Movie
-                                    image={
-                                        movie.poster_path
-                                            ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`
-                                            : null
-                                    }
-                                    key={movie.id}
-                                    id={movie.id}
-                                />
-                                </div>
-                            </React.Fragment>
+                {UpcomingMovies && UpcomingMovies.map((upcoming, index) => {
+                    return (
+                        <div className="card-margin">
+                        <React.Fragment key={index}>
+                            <div>
+                            <Movie
+                                image={
+                                    upcoming.poster_path
+                                        ? `${IMAGE_BASE_URL}w500/${upcoming.poster_path}`
+                                        : null
+                                }
+                                key={upcoming.id}
+                                id={upcoming.id}
+                            />
                             </div>
-                        );
-                    })}
-                </Slider>
+                        </React.Fragment>
+                        </div>
+                    );
+                })}
+            </Slider>
+            
             </div>
             )}
         </div>
