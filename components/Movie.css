@@ -8,6 +8,11 @@
     transform: scale(1.1);
 }
 
+.Movie{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
 
 @media screen and (min-width: 1200px){
     .gridcard{
@@ -18,8 +23,7 @@
     }
 
     .gridcardLink{
-        margin: 50px;
-        width: 250px;
+        width: 200px;
         height: 300px;
     }
     
@@ -69,6 +73,7 @@
 }
 
 /* Arrows */
+
 
 .slick-prev {
     z-index: 9999;

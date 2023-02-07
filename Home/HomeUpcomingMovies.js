@@ -1,7 +1,7 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
-import { API_URL, API_KEY, IMAGE_BASE_URL} from "../components/config";
+import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import "slick-carousel/slick/slick.css";
 import "./Home.css";
 import Loading from "../components/Loading";
@@ -16,8 +16,8 @@ function HomeUpcomingMovies() {
     const cardsettings = {
         dots: false,
         infinite: true,
-        slidesToShow: 8,
-        slidesToScroll: 8,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         responsive: [
             {
                 breakpoint: 320,
@@ -49,8 +49,8 @@ function HomeUpcomingMovies() {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                     infinite: true,
                     dots: false
                 }
@@ -58,8 +58,8 @@ function HomeUpcomingMovies() {
             {
                 breakpoint: 1440,
                 settings: {
-                    slidesToShow: 6,
-                    slidesToScroll: 6,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     infinite: true,
                     dots: false
                 }
@@ -78,12 +78,12 @@ function HomeUpcomingMovies() {
             .then((response) => response.json())
             .then(response => {
                 setUpcoming([...UpcomingMovies, ...response.results]);
-                
+
                 setLoading(false);
             });
     }
 
-    
+
 
     const navigateUpcomingMore = () => {
         navigate("/UpcomingMore");
@@ -91,39 +91,35 @@ function HomeUpcomingMovies() {
 
 
     return (
-        <div className="Upcoming">
+        <div className="Home">
             {loading ? (
-            <div>
-                <Loading />
-            </div>) : (
-            <div>
-                <div className="container">
-                <h3 className="Header">Upcoming Movies</h3>
-                <button className="Morebtn" onClick={navigateUpcomingMore}>More</button>
-            </div> 
-            <Slider {...cardsettings} className="slider">
-                {UpcomingMovies && UpcomingMovies.map((upcoming, index) => {
-                    return (
-                        <div className="card-margin">
-                        <React.Fragment key={index}>
-                            <div>
-                            <Movie
-                                image={
-                                    upcoming.poster_path
-                                        ? `${IMAGE_BASE_URL}w500/${upcoming.poster_path}`
-                                        : null
-                                }
-                                key={upcoming.id}
-                                id={upcoming.id}
-                            />
-                            </div>
-                        </React.Fragment>
-                        </div>
-                    );
-                })}
-            </Slider>
-            
-            </div>
+                <div>
+                    <Loading />
+                </div>) : (
+                <div>
+                    <div className="container">
+                        <h3 className="Header">Upcoming Movies</h3>
+                        <button className="Morebtn" onClick={navigateUpcomingMore}>More</button>
+                    </div>
+                    <Slider {...cardsettings} className="slider">
+                        {UpcomingMovies && UpcomingMovies.map((upcoming, index) => {
+                            return (
+                                <React.Fragment key={index}>
+                                    <Movie
+                                        image={
+                                            upcoming.poster_path
+                                                ? `${IMAGE_BASE_URL}w500/${upcoming.poster_path}`
+                                                : null
+                                        }
+                                        key={upcoming.id}
+                                        id={upcoming.id}
+                                    />
+                                </React.Fragment>
+                            );
+                        })}
+                    </Slider>
+
+                </div>
             )}
         </div>
     );

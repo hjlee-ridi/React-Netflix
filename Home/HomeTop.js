@@ -47,8 +47,8 @@ function HomeTop() {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                     infinite: true,
                     dots: false
                 }
@@ -56,8 +56,8 @@ function HomeTop() {
             {
                 breakpoint: 1440,
                 settings: {
-                    slidesToShow: 6,
-                    slidesToScroll: 6,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     infinite: true,
                     dots: false
                 }
@@ -92,7 +92,7 @@ function HomeTop() {
 
 
     return (
-        <div className="Top">
+        <div className="Home Top">
             <div className="container">
                 <h3 className="Header">Today Top 20</h3>
             </div>
@@ -100,9 +100,7 @@ function HomeTop() {
                 <Slider {...cardsettings} className="slider">
                     {movies.results.map((movie, index) => {
                         return (
-                            <div className="card-margin">
                             <React.Fragment key={index}>
-                                <div>
                                 <Movie
                                     image={
                                         movie.poster_path
@@ -112,9 +110,7 @@ function HomeTop() {
                                     key={movie.id}
                                     id={movie.id}
                                 />
-                                </div>
-                            </React.Fragment>
-                            </div>
+                            </React.Fragment> 
                         );
                     })}
                 </Slider>

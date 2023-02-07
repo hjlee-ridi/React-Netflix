@@ -17,41 +17,14 @@ function HomeDrama() {
     const cardsettings = {
         dots: false,
         infinite: true,
-        slidesToShow: 8,
-        slidesToScroll: 8,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         responsive: [
-            {
-                breakpoint: 320,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: false
-                }
-            },
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
                     infinite: true,
                     dots: false
                 }
@@ -59,8 +32,8 @@ function HomeDrama() {
             {
                 breakpoint: 1440,
                 settings: {
-                    slidesToShow: 6,
-                    slidesToScroll: 6,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                     infinite: true,
                     dots: false
                 }
@@ -92,7 +65,7 @@ function HomeDrama() {
 
 
     return (
-        <div className="drama">
+        <div className="Home">
             {loading ? (
                 <div>
                     <Loading />

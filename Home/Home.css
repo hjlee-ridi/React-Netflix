@@ -10,20 +10,31 @@
     border-color: red;
 }
 
-.Top{
+.Home{
     margin-top: 150px;
     height: 500px;
-    margin: 150px 150px 0px 150px;
+    margin: 0px 150px;
+    display: block;
 }
 
-.card-margin{
-    margin-left: 30px;
+.Home.Top{
+    margin-top: 150px;
 }
+
+.Movies{
+    margin: 50px;
+    height: 50%;
+    display: inline;
+    text-align: center;
+}
+
 
 .slider{
     margin-bottom: 80px;
-    padding: 0 50px;
+    padding: 0 60px;
+    
 }
+
 
 @media screen and (min-width: 1200px){
     .container {
