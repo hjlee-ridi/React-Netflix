@@ -63,7 +63,7 @@ ul{
 .title{
     color: white;
     z-index: 999;
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 700;
     text-align: center;
     margin-top: 10px;
@@ -73,7 +73,7 @@ ul{
 
 .overview{
     color: white;
-    font-size: 27px;
+    font-size: 22px;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -81,7 +81,7 @@ ul{
 
 .Detail .genreList {
     color: rgb(255, 138, 71);
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     display: flex;
     justify-content: space-evenly;
@@ -104,7 +104,7 @@ ul{
 
 .Detail h4{
     color: rebeccapurple;
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
@@ -112,21 +112,21 @@ ul{
 
 
 .date{
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     color: white;
 }
 
 
 .runtime{
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     color: white;
 }
 
 
 .star{
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     color: white;
 }

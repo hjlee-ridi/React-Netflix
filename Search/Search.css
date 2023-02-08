@@ -17,7 +17,7 @@
 
 
 .input .inputbox{
-    width: 500px;
+    width: 400px;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -32,7 +32,7 @@
 }
 
 .input .inputReset{
-    width: 50px;
+    width: 40px;
     height: 50px;
     background-color: white;
     border-left: 3px solid red;
@@ -43,8 +43,10 @@
 
 
 .search .Movie{
+	width: 95%;
 	display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
+    margin: 50px;
+    margin-bottom: 30%;
 }

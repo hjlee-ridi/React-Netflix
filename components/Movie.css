@@ -42,36 +42,6 @@
 }
 
 
-@media screen and (min-width: 480px) and (max-width:767px) {
-
-    .components_movieImg{
-        width: 150px;
-    }
-
-    .gridcard{
-        width: 150px;
-        height: 200px;
-        position: relative;
-        border-radius: 5%;
-        padding: 5px;
-    }
-}
-
-@media screen and (max-width:479px) {
-
-    .components_movieImg{
-        width: 130px;
-    }
-
-    .gridcard{
-        width: 70px;
-        height: 100px;
-        position: relative;
-        border-radius: 5%;
-        padding: 5px;
-    }
-}
-
 /* Arrows */
 
 

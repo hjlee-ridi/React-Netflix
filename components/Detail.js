@@ -4,6 +4,7 @@ import './Detail.css';
 
 function Detail({ id, title, backdrop_path, poster_path, overview, genres, vote_average, runtime, release_date }) {
 
+    
     return (
         <div className='Detail'>
             <img src={backdrop_path} alt={title} className='background' />

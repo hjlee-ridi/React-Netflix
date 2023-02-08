@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom"
 
 function Search(props) {
   return (
-    <div>
-      <img src={props.image} alt={props.title} className='gridcard' />
-    </div>
+      <Link to={`/Netflix/${props.id}`} className='gridcardLink'>
+        <img src={props.image} alt={props.title} className='gridcard' />
+      </Link>
+
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import Movie from "../components/Movie";
+import Search from "../components/Search";
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
 import "./Search.css";
 import axios from 'axios';
@@ -44,26 +45,26 @@ function HomeSearch() {
                 <button className="inputReset" onClick={inputReset}>X</button>
             </div>
             <div className="Movie">
-            {data && data.map((movieQuery, index) => {
-                return (
-                    <React.Fragment key={index}>
-                        {movieQuery.poster_path && (
-                            <Movie
-                                image={
-                                    movieQuery.poster_path
-                                        ? `${IMAGE_BASE_URL}w500/${movieQuery.poster_path}`
-                                        : null
-                                }
-                                key={movieQuery.id}
-                                id={movieQuery.id}
-                            />
-                        )
+                {data && data.map((movieQuery, index) => {
+                    return (
+                        <React.Fragment key={index}>
+                            {movieQuery.poster_path && (
+                                <Search
+                                    image={
+                                        movieQuery.poster_path
+                                            ? `${IMAGE_BASE_URL}w500/${movieQuery.poster_path}`
+                                            : null
+                                    }
+                                    key={movieQuery.id}
+                                    id={movieQuery.id}
+                                />
+                            )
 
-                        }
+                            }
 
-                    </React.Fragment>
-                );
-            })}
+                        </React.Fragment>
+                    );
+                })}
             </div>
         </div>
     );
