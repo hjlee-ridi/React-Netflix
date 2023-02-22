@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-text-size-adjust : 100%;
 }
 
 
@@ -8,5 +9,6 @@ body {
     background: black;
     margin: 0;
     padding: 0;
+
 }
 
