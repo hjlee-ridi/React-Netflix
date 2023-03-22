@@ -32,6 +32,13 @@
   1. 인기영화 순위, 개봉 예정작, 장르 모음 인기 순위<br>
   2. 상세페이지(영화 제목, 설명, 장르, 개봉일, 러닝타임, 별점<br>
   3. 검색기능
-
+<br><br><br>
 <div>
+<div align="center">
+  <h3>동작 화면</h3>
+  
+  <img src="https://user-images.githubusercontent.com/109647831/226927396-b4e61ff0-4d31-40b5-8c40-bfc176c89405.gif" /><br>
+  <img src="https://user-images.githubusercontent.com/109647831/226927663-f808680b-1b3c-4784-9efc-6580ab093c16.gif" /><br>
+  <img src="https://user-images.githubusercontent.com/109647831/226927844-dc8cfac1-10b3-4dbe-9fce-ab944e4c3810.gif" />
+</div>
 
