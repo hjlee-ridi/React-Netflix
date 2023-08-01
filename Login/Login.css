@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    /* margin: -20px 0 50px; */
+}
+
+.Sign-Up{
+    background-color: white;
+    width: 25vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Hello-Netflix{
+    background: rgb(255,79,40);
+background: linear-gradient(159deg, rgba(255,79,40,1) 0%, rgba(255,0,0,1) 57%);
+    width: 25vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Login h1 {
+    color: black;
+    font-weight: bold;
+    margin: 60px;
+  }
+
+.Login form{
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    width: 100%;
+  }
+  
+.Login button {
+  height: 50px;
+  border-radius: 20px;
+  border: 1px solid red;
+  background-color: red;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+
