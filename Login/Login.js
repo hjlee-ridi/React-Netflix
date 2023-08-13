@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 import './Login.css';
 
 
 function Login() {
 
-    const [Id, setId] = useState("")
-    const [Password, setPassword] = useState("")
+    const [id, setId] = useState("")
+    const [password, setPassword] = useState("")
 
     const handleInputId = (e) => {
         setId(e.target.value)
@@ -16,12 +17,17 @@ function Login() {
         setPassword(e.target.value)
     }
 
+
+
     function handleSubmit(event) {
         event.preventDefault();
-        axios.post('http://localhost:3306/login', {Id, Password})
+        axios.post('http://localhost:8080/Login', {id, password})
         .then(res => console.log(res))
         .catch(err => console.log(err));
-    }
+    
+        }
+
+    
 
     return(
         <div className="Login">

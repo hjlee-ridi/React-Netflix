@@ -4,31 +4,33 @@ const cors = require('cors');
 
 const app =  express();
 app.use(express.json());
-// app.use(express.urlencoded({ extended: ture }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
 const db = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "8975",
+    user: "root1",
+    password: "",
     database: "netflix"
 })
 
 
 
 app.post('/Login', (req, res) => {
-    const sql = "SELECT * FROM login WHERE username = ? AND password = ?";
-    const values = [
-        req.body.id,
-        req.body.password
-    ]
-    db.query(sql, [values], (err, data) => {
-        if(err) return res.json("Login Failed");
-        return res.json(data);
+    const sql = "SELECT * FROM login WHERE id = ? AND password = ?";
+
+    db.query(sql, [req.body.id,  req.body.password], (err, data) => {
+        if(err) return res.json(err);
+        if(data.length > 0) {
+            return res.json("Login Successfully")
+        } else {
+            return res.json("No Record")
+        }
     })
 })
 
-app.listen(3306, () => {
+app.listen(8080, () => {
     console.log("Listening...");
 })
+
