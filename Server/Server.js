@@ -11,10 +11,15 @@ app.use(cors());
 const db = mysql.createConnection({
     host: "localhost",
     user: "root1",
-    password: "",
-    database: "netflix"
+    password: "8975",
+    database: "netflix",
+    wait_timeout : 28800,
+    connect_timeout :10
 })
 
+function ErrorIdMessage() {
+    return {__html: '아이디를 입력하세요.'};
+}
 
 
 app.post('/Login', (req, res) => {
@@ -22,10 +27,13 @@ app.post('/Login', (req, res) => {
 
     db.query(sql, [req.body.id,  req.body.password], (err, data) => {
         if(err) return res.json(err);
+        if(req.body.id.length == 0) {
+            return res.json(<div dangerouslySetInnerHTML={ErrorIdMessage()} />);
+        }
         if(data.length > 0) {
             return res.json("Login Successfully")
         } else {
-            return res.json("No Record")
+            return res.json("실패")
         }
     })
 })
