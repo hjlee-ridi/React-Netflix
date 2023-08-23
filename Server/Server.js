@@ -17,9 +17,6 @@ const db = mysql.createConnection({
     connect_timeout :10
 })
 
-function ErrorIdMessage() {
-    return {__html: '아이디를 입력하세요.'};
-}
 
 
 app.post('/Login', (req, res) => {
