@@ -11,10 +11,9 @@ app.use(cors());
 const db = mysql.createConnection({
     host: "localhost",
     user: "root1",
-    password: "8975",
+    password: "",
     database: "netflix",
-    wait_timeout : 28800,
-    connect_timeout :10
+
 })
 
 
