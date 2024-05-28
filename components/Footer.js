@@ -1,12 +1,11 @@
 import React from 'react'
+import logo from '../Img/copyright.png';
 import './Footer.css';
 
 function Footer() {
     return (
         <div className='footer'>
-            <p>producer: ridi</p>
-            <p>e-mail: ride_die@naver.com</p>
-            <p> Copyright 2022 ridi. all rights free</p>
+            <p><img src={logo} /> All rights free</p>
         </div>
     )
 }

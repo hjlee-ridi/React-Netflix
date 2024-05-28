@@ -3,139 +3,435 @@
     padding: 0;
 }
 
-ul{
-    list-style:none;
-    padding-left:0px;
+ul {
+    list-style: none;
+    padding-left: 0px;
 }
 
-.Detail{
-    height: 100vh;
-    width: 100%;
+@media screen and (max-width: 480px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .DetailContainer {
+        width: 90%;
+        max-width: 480px;
+        margin: auto;
+    }
+
+    .background {
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+
+
+    }
+
+    .rectangle {
+        width: 480px;
+        height: 900px;
+        overflow: hidden;
+        background: rgb(128, 127, 127);
+        opacity: 0.9;
+        z-index: 999;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .image {
+        width: 300px;
+        height: auto;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%); 
+        z-index: 999;
+    }
+
+    .Info {
+        width: 250px;
+        position: absolute;
+        top: 430px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+
+    }
+
+    .title {
+        color: white;
+        z-index: 999;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+
+    .overview {
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 15px;
+
+    }
+
+
+    .Detail .genreList {
+        color: rgb(255, 138, 71);
+        font-size: 16px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .Detail .genre {
+        width: 250px;
+        padding: 10px 5px 10px 5px;
+    }
+
+
+    .MovieInfo {
+        width: 250px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .Detail h4 {
+        color: rebeccapurple;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .date {
+        font-size: 14px;
+        text-align: center;
+        color: white;
+    }
+
+
+    .runtime {
+        font-size: 14px;
+        text-align: center;
+        color: white;
+    }
+
+
+    .star {
+        font-size: 14px;
+        text-align: center;
+        color: white;
+    }
+
+
+    .Detail h3 {
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
 }
 
-.background{
-     height: 100vh;
-     width: 100%;
-     background-size: cover;
-     background-repeat: no-repeat;
-     opacity: 0.3;
-     position: relative;
-     border-color: black;
+
+
+
+@media screen and (min-width: 481px) and (max-width: 1199px) {
+    .DetailContainer {
+        position: relative;
+        width: 100%;
+    }
+
+    .background {
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+
+
+    }
+
+    .rectangle {
+        width: 480px;
+        height: 900px;
+        overflow: hidden;
+        background: rgb(128, 127, 127);
+        opacity: 0.9;
+        z-index: 999;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .image {
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+    }
+
+    .Info {
+        width: 430px;
+        position: absolute;
+        top: 400px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+
+    }
+
+    .title {
+        color: white;
+        z-index: 999;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+
+    .overview {
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 30px;
+
+    }
+
+
+    .Detail .genreList {
+        color: rgb(255, 138, 71);
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 30px;
+    }
+
+    .Detail .genre {
+        padding: 10px;
+    }
+
+
+    .MovieInfo {
+        width: 430px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .Detail h4 {
+        color: rebeccapurple;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .date {
+        font-size: 14px;
+        text-align: center;
+        color: white;
+    }
+
+
+    .runtime {
+        font-size: 14px;
+        text-align: center;
+        color: white;
+    }
+
+
+    .star {
+        font-size: 14px;
+        text-align: center;
+        color: white;
+    }
+
+
+    .Detail h3 {
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+
+
 }
 
-.rectangle {
-    width: 80vw;
-    height: 80vh;
-    background: rgb(128, 127, 127);
-    opacity: 0.9;
-    z-index: 999;
-    position: absolute;
-    top: 12%;
-    left: 10%;
-  }
+@media screen and (min-width: 1200px) {
+
+    .DetailContainer {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .background {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        position: relative;
+        border-color: black;
+    }
+
+    .rectangle {
+        width: 80vw;
+        height: 80vh;
+        background: rgb(128, 127, 127);
+        opacity: 0.9;
+        z-index: 999;
+        position: absolute;
+        top: 12%;
+        left: 10%;
+    }
 
 
-.image{
-    width: 30vw;
-    height: 80vh;
-    position: absolute;
-    top: 12%;
-    left: 10%;
-    z-index: 999;
+    .image {
+        width: 30vw;
+        height: 80vh;
+        position: absolute;
+        top: 12%;
+        left: 10%;
+        z-index: 999;
+    }
+
+
+    .Info {
+        width: 40%;
+        height: 80%;
+        z-index: 999;
+        position: absolute;
+        top: 12%;
+        left: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+
+
+    .title {
+        color: white;
+        z-index: 999;
+        font-size: 3vw;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 0.8vw;
+        margin-bottom: 1vw;
+    }
+
+
+    .overview {
+        color: white;
+        font-size: 1.5vw;
+        text-align: center;
+        margin-bottom: 0.8vw;
+        overflow-y: auto;
+    }
+
+
+    .overview::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .overview::-webkit-scrollbar-thumb {
+        background: rgb(255, 138, 71);
+        border-radius: 10px;
+
+    }
+
+    .overview::-webkit-scrollbar-track {
+        background: rgb(180, 180, 180);
+        border-radius: 10px;
+    }
+
+    .Detail .genreList {
+        color: rgb(255, 138, 71);
+        font-size: 2vw;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 0.8vw;
+    }
+
+    .Detail .genre {
+        padding: 0.4vw;
+    }
+
+
+    .MovieInfo {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .Detail h4 {
+        color: rebeccapurple;
+        font-size: 2vw;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+    .date {
+        font-size: 1.5vw;
+        text-align: center;
+        color: white;
+    }
+
+
+    .runtime {
+        font-size: 1.5vw;
+        text-align: center;
+        color: white;
+    }
+
+
+    .star {
+        font-size: 1.5vw;
+        text-align: center;
+        color: white;
+    }
+
+
+    .Detail h3 {
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+
 }
-
-
-.Info{
-    width: 40%;
-    height: 80%;
-    z-index: 999;
-    position: absolute;
-    top: 12%;
-    left: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-
-
-.title{
-    color: white;
-    z-index: 999;
-    font-size: 70px;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 50px;
-}
-
-
-.overview{
-    color: white;
-    font-size: 22px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-
-.Detail .genreList {
-    color: rgb(255, 138, 71);
-    font-size: 40px;
-    font-weight: 700;
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-}
-
-.Detail .genre{
-    padding: 10px;
-}
-
-
-.MovieInfo{
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-.Detail h4{
-    color: rebeccapurple;
-    font-size: 40px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-
-.date{
-    font-size: 40px;
-    text-align: center;
-    color: white;
-}
-
-
-.runtime{
-    font-size: 40px;
-    text-align: center;
-    color: white;
-}
-
-
-.star{
-    font-size: 40px;
-    text-align: center;
-    color: white;
-}
-
-
-.Detail h3{
-    color: white;
-    display: flex;
-    justify-content: center;
-}
-
-

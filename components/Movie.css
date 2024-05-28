@@ -8,6 +8,27 @@
     transform: scale(1.1);
 }
 
+
+.Movie{
+    width: 79vw;
+    display: flex;
+    justify-content: center;
+}
+
+.gridcardLink{
+    width: 15vw;
+    height: 30vw;
+} 
+
+.gridcard{
+    width: 15vw;
+    height: 30vw;
+    border-radius: 5%;
+}
+
+
+
+/* 
 .Movie{
     width: 300px;
     display: flex;
@@ -39,7 +60,7 @@
         border-radius: 5%;
         padding: 5px;
     }
-}
+} */
 
 
 /* Arrows */

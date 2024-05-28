@@ -4,11 +4,14 @@ import './Detail.css';
 
 function Detail({ id, title, backdrop_path, poster_path, overview, genres, vote_average, runtime, release_date }) {
 
+
     
     return (
-        <div className='Detail'>
+        <div className='DetailContainer'>
+
             <img src={backdrop_path} alt={title} className='background' />
             <div className='rectangle'></div>
+            
             <img src={poster_path} alt={title} className='image' />
             <div className='Info'>
 
@@ -24,9 +27,8 @@ function Detail({ id, title, backdrop_path, poster_path, overview, genres, vote_
                 <div className='MovieInfo'>
                     <div><h4>Date</h4><p className='date'>{release_date}</p></div>
                     <div><h4>runtime</h4> <p className='runtime'>{runtime}</p></div>
-                    <div><h4>Scope</h4> <p className='star'>{vote_average}/10</p></div>
+                    <div><h4>Scope</h4> <p className='star'>{vote_average}</p></div>
                 </div>
-
 
             </div>
         </div>

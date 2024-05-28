@@ -11,9 +11,9 @@ function Header() {
             <Link to="/">
                 <img src={logo} alt="netflix" className="logo"/>
             </Link>
-            <Link to="/Login">
+            {/* <Link to="/Login">
                 <button className="Login">로그인</button>
-            </Link>
+            </Link> */}
             <Link to="/Search">
                 <img src={search} alt="Search" className="search" />
             </Link>
