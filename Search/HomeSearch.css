@@ -1,10 +1,11 @@
 * {
-   margin: 0;
-   padding: 0;
-   border: hidden;
+    margin: 0;
+    padding: 0;
+    border: hidden;
 }
 
-.Search{
+
+.Search {
     width: 90%;
     position: relative;
     top: 0;
@@ -12,14 +13,14 @@
     transform: translate(-5%, 0%);
 }
 
-.Search .container{
+.Search .container {
     width: 90%;
 }
 
-.input{
+.input {
     width: 100%;
     height: 30%;
-	display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
@@ -27,7 +28,7 @@
 }
 
 
-.input .inputbox{
+.input .inputbox {
     width: 400px;
     height: 55px;
     display: flex;
@@ -42,23 +43,64 @@
     outline: none;
 }
 
-.input .inputReset{
+.input .inputReset {
     width: 40px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0);
     border-left: 3px solid red;
     position: fixed;
     transform: translate(180px, 2.5px);
-    /* display: fixed;
-    transform: translate(-50px, 5px); */
 
-} 
+}
 
-
-
-
-.Search .Movies{
-	display: flex;
+.Search .Movies {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+
+@media screen and (max-width:480px) {
+
+
+
+    .Search {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Search .container {
+        width: 280px;
+        height: 100%;
+        margin-top: 100px;
+    }
+
+    .Search .input{
+        width: 100%;
+        height: 30%;
+        margin-bottom: 0;
+    }
+
+    .Search .Movies{
+        width: 100%;
+    }
+
+    .input .inputbox {
+        width: 200px;
+        height: 45px;
+    }
+    
+    
+    .input .inputReset {
+        width: 40px;
+        height: 30px;
+        position: fixed;
+        transform: translate(80px, 110px);
+    
+    }
+
+
+   
 }

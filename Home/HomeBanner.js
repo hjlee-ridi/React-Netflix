@@ -17,10 +17,10 @@ function HomeBanner() {
 
 	const [index, setIndex] = useState(0);
 
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-    };
-	
+	const handleSelect = (selectedIndex, e) => {
+		setIndex(selectedIndex);
+	};
+
 
 	useEffect(() => {
 		const fetchUsers = async () => {
@@ -47,28 +47,31 @@ function HomeBanner() {
 
 
 	return (
-		<Container fluid>
+		<Container>
 			<Row>
 				<Col>
-				<Carousel activeIndex={index} onSelect={handleSelect}>
-						{movies.results.map((banner, index) => {
-							return (
-								<Carousel.Item key={index}>
-									<Banner
-									image={
-										banner.backdrop_path
-											? `${IMAGE_BASE_URL}original/${banner.backdrop_path}`
-											: null
-									}
-									key={banner.id}
-									id={banner.id}
-									title={banner.title}
-								/>
-								</Carousel.Item>
-								
-							);
-						})}
-        			</Carousel>
+					<div className="Banner">
+						<Carousel activeIndex={index} onSelect={handleSelect}>
+							{movies.results.map((banner, index) => {
+								return (
+									<Carousel.Item key={index}>
+										<Banner
+											image={
+												banner.backdrop_path
+													? `${IMAGE_BASE_URL}original/${banner.backdrop_path}`
+													: null
+											}
+											key={banner.id}
+											id={banner.id}
+											title={banner.title}
+											overview={banner.overview}
+										/>
+									</Carousel.Item>
+
+								);
+							})}
+						</Carousel>
+					</div>
 				</Col>
 			</Row>
 		</Container>

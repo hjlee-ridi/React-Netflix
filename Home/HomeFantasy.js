@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import { API_URL, API_KEY, IMAGE_BASE_URL, FANTASY } from "../components/config";
 import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
 import Loading from "../components/Loading";
 import Movie from "../components/Movie";
@@ -14,33 +15,12 @@ function HomeFantasy(props) {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
-    const cardsettings = {
-        dots: false,
+    const settings = {
         infinite: true,
+        speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 5,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 1440,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    infinite: true,
-                    dots: false
-                }
-            }
-        ]
+        slidesToScroll: 5
     };
-
 
 
 
@@ -68,36 +48,37 @@ function HomeFantasy(props) {
     return (
         <div className="Home">
             {loading ? (
-            <div>
-                <Loading />
-            </div>) : (
-            <div>
                 <div>
+                    <Loading />
+                </div>) : (
                 <div className="container">
-                <h3 className="Header">Fantasy</h3>
-                <button className="Morebtn" onClick={navigateFantasyMore}>More</button>
-            </div> 
-            <Slider {...cardsettings} className="slider">
-                {fantasy && fantasy.map((fantasy, index) => {
-                    return (
-                        <React.Fragment key={index}>
-                            <Movie
-                                image={
-                                    fantasy.poster_path
-                                        ? `${IMAGE_BASE_URL}w500/${fantasy.poster_path}`
-                                        : null
-                                }
-                                key={fantasy.id}
-                                id={fantasy.id}
-                            />
-                        </React.Fragment>
-                    );
-                })}
-            </Slider>
-            </div>
-            </div>
-            )}
-        </div>
+                    <div className="Header_container">
+                        <h3 className="Header">Fantasy</h3>
+                        <button className="Morebtn" onClick={navigateFantasyMore}>More</button>
+                    </div>
+                    <div className="Movies">
+                        <Slider {...settings} className="slider">
+                            {fantasy && fantasy.map((fantasy, index) => {
+                                return (
+                                    <React.Fragment key={index}>
+                                        <Movie
+                                            image={
+                                                fantasy.poster_path
+                                                    ? `${IMAGE_BASE_URL}w500/${fantasy.poster_path}`
+                                                    : null
+                                            }
+                                            key={fantasy.id}
+                                            id={fantasy.id}
+                                        />
+                                    </React.Fragment>
+                                );
+                            })}
+                        </Slider>
+                    </div>
+                </div>
+            )
+            }
+        </div >
     );
 }
 

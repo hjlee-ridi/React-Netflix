@@ -4,6 +4,8 @@ import axios from "axios";
 import Movie from "../components/Movie";
 import { API_URL, API_KEY, IMAGE_BASE_URL } from "../components/config";
 import Loading from "../components/Loading";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
 
 
@@ -11,59 +13,12 @@ function HomeTop() {
     const [movies, setMovies] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const cardsettings = {
-        dots: false,
+    const settings = {
         infinite: true,
+        speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 5,
-        responsive: [
-            {
-                breakpoint: 320,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: false
-                }
-            },
-            {
-                breakpoint: 1440,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    infinite: true,
-                    dots: false
-                }
-            }
-        ]
-    };
+        slidesToScroll: 5
+      };
 
 
     useEffect(() => {
@@ -92,12 +47,13 @@ function HomeTop() {
 
 
     return (
-        <div className="Home Top">
-            <div className="container">
+        <div className="Home">
+            <div className="container" >
+            <div className="Header_container">
                 <h3 className="Header">Today Top 20</h3>
             </div>
             <div className="Movies">
-                <Slider {...cardsettings} className="slider">
+                <Slider {...settings} className="slider">
                     {movies.results.map((movie, index) => {
                         return (
                             <React.Fragment key={index}>
@@ -114,6 +70,7 @@ function HomeTop() {
                         );
                     })}
                 </Slider>
+            </div>
             </div>
         </div>
     );
